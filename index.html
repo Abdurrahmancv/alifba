@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alifba - Canlı Metin Prosesör</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f6f9;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            box-sizing: border-box;
+        }
+
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        p.subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 25px;
+            font-size: 14px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 100px;
+            padding: 15px;
+            border: 2px solid #bdc3c7;
+            border-radius: 8px;
+            font-size: 16px;
+            resize: vertical;
+            box-sizing: border-box;
+            transition: border-color 0.3s;
+        }
+
+            textarea:focus {
+                border-color: #3498db;
+                outline: none;
+            }
+
+        .output-box {
+            margin-top: 20px;
+            width: 100%;
+            height: 150px;
+            padding: 15px;
+            border: 2px solid #2ecc71;
+            border-radius: 8px;
+            font-size: 36px;
+            background-color: #fafbfc;
+            box-sizing: border-box;
+            overflow-y: auto;
+            white-space: pre-wrap;
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            direction: ltr;
+        }
+
+            .output-box span {
+                display: inline-block;
+                margin-left: -4px; /* Standart fontlar yeterli uzunlukta tasarlanmadığı için, harfleri birbirine yakınlaştırdık */
+            }
+
+        .info {
+            margin-top: 25px;
+            font-size: 13px;
+            color: #95a5a6;
+            text-align: center;
+            border-top: 1px solid #ecf0f1;
+            padding-top: 15px;
+        }
+
+        .badge {
+            background: #e67e22;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Dijital İmlâ Sistemi</h1>
+        <p class="subtitle">Geliştirici: Abdurrahman Çevik | Evrensel Elifbe</p>
+
+        <p><strong>Aşağıdaki kutuya tıklayın ve klavyenizle yazın:</strong> <span class="badge">Simülasyon Aktif</span></p>
+        <textarea id="inputEditor" placeholder="Bir şeyler yazın..."></textarea>
+
+        <div style="margin-top: 15px; font-weight: bold; color: #2ecc71;">Output:</div>
+        <div id="output" class="output-box"></div>
+
+        <div class="info">
+            <strong>Normal</strong> basış harfin <em>Başta ve Ortada</em> halini yazar.
+            <strong>Shift</strong> ile basış harfin <em>Sonda ve Yalın</em> halini yazar.<br>
+        </div>
+    </div>
+
+    <script>
+        const KeyboardMap = {
+        'q': [0xFED7, 0xFED5], 'w': [0xFEB7, 0xFEB5], 'e': [0xFEEB, 0xFEE9],
+        'r': [0xFEAD, 0x0695], 't': [0xFE97, 0xFE9B], 'y': [0xFBE8, 0xFBAE],
+        'u': [0xFEED, 0x08AB], 'ı': [0xFEF3, 0xFEEF], 'i': [0xFEF3, 0xFEEF],
+        'o': [0xFECB, 0xFEC9], 'p': [0xFEC3, 0xFEC7], 'ğ': [0xFE93, 0x0621],
+        '[': [0xFE93, 0xFE93], '}': [0xFBA4, 0xFBA4], 'ü': [0xFE85, 0xFE81],
+        '{': [0xFE81, 0xFE81], ']': [0xFE85, 0xFE85], 'a': [0xFE8D, 0x0683],
+        's': [0xFEB3, 0xFEB1], 'd': [0xFEA9, 0xFEAB], 'f': [0xFED3, 0xFB6C],
+        'g': [0xFECF, 0xFECD], 'h': [0xFEA3, 0xFEA1], 'j': [0xFE9F, 0xFE9D],
+        'k': [0xFEDB, 0xFB94], 'l': [0xFEDF, 0xFEFB], 'ş': [0xFEB7, 0xFEB5],
+        ';': [0xFB7C, 0xFB7A], 'z': [0xFEAF, 0xFB8A], 'x': [0xFEA7, 0xFEA5],
+        'c': [0xFEBB, 0xFEB9], 'v': [0xFEBF, 0xFEBD], 'b': [0xFE91, 0xFB58],
+        'n': [0xFEE7, 0xFEE5], 'm': [0xFEE3, 0xFEE1], 'ö': [0xFBD5, 0xFB9E],
+        'ç': [0xFB7C, 0xFB7A], ',': [0x060C, 0x060C], '.': [0x0640, 0x0640],
+        '_': [0x0640, 0x0640], '?': [0x061F, 0x061F], '/': [0x005C, 0x005C]
+        };
+
+        const inputEditor = document.getElementById('inputEditor');
+        const outputDiv = document.getElementById('output');
+        let currentCodepoints = [];
+        let preCalculatedCopyText = "";
+
+        inputEditor.addEventListener('input', () => {
+        const rawText = inputEditor.value;
+        if (rawText === '') {
+        outputDiv.innerText = '';
+        currentCodepoints = [];
+        preCalculatedCopyText = "";
+        return;
+        }
+
+        let localBuffer = [];
+        const charArray = Array.from(rawText);
+
+        for (let char of charArray) {
+        const isUpperCase = (char === char.toUpperCase() && char !== char.toLowerCase());
+        const key = char.toLowerCase();
+
+        let targetCodePoint = KeyboardMap[key] ? KeyboardMap[key][isUpperCase ? 1 : 0] : char.codePointAt(0);
+        if (targetCodePoint === undefined) targetCodePoint = KeyboardMap[key];
+
+        if (targetCodePoint) {
+        if (Array.isArray(targetCodePoint)) {
+        targetCodePoint.forEach(cp => localBuffer.push(cp));
+        } else {
+        localBuffer.push(targetCodePoint);
+        }
+        }
+        }
+
+        currentCodepoints = localBuffer;
+        renderOutput();
+        });
+
+        function isNumber(cp) {
+        return (cp >= 0x0030 && cp <= 0x0039) ||
+        (cp >= 0x0660 && cp <= 0x0669) ||
+        (cp >= 0x06F0 && cp <= 0x06F9);
+        }
+
+        function processBuffer(buffer, reverseNumbers) {
+        let result = [];
+        let currentNumGroup = [];
+
+        for (let i = 0; i < buffer.length; i++) {
+        let cp = buffer[i];
+        if (isNumber(cp)) {
+        currentNumGroup.push(cp);
+        } else {
+        if (currentNumGroup.length > 0) {
+        if (reverseNumbers) currentNumGroup.reverse();
+        result.push(...currentNumGroup);
+        currentNumGroup = [];
+        }
+        result.push(cp);
+        }
+        }
+        if (currentNumGroup.length > 0) {
+        if (reverseNumbers) currentNumGroup.reverse();
+        result.push(...currentNumGroup);
+        }
+        return result;
+        }
+
+        function renderOutput() {
+        let processedBuffer = processBuffer(currentCodepoints, false);
+
+        outputDiv.innerHTML = processedBuffer.map(cp => `<span>${String.fromCodePoint(cp)}</span>`).join("");
+
+        let processedCopyBuffer = processBuffer(currentCodepoints, true);
+        preCalculatedCopyText = processedCopyBuffer.map(cp => String.fromCodePoint(cp)).join("");
+        }
+
+        outputDiv.addEventListener('copy', (e) => {
+        e.preventDefault();
+        if (e.clipboardData) {
+        e.clipboardData.setData('text/plain', preCalculatedCopyText);
+        } else if (window.clipboardData) {
+        window.clipboardData.setData('Text', preCalculatedCopyText);
+        }
+        });
+    </script>
+</body>
+</html>
