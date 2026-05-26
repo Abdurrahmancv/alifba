@@ -37,13 +37,13 @@ Unicode cetvelindeki tüm "Arapça Sunum Biçimleri" (Presentation Forms) reform
 Harflerin yalın hallerinin bulunduğu orijinal **0x06** tablosunda, harfler doğrudan **baştaki / kendinden sonrakiyle birleşen formuyla (Mesela: `بـ`)** tutulmalıdır.
 
 * Bu sayede kullanıcı harfe bastığı an, karakter otomatik olarak bir sonraki harfe akmaya ve el ele tutuşmaya hazır olur.
-* Esasında harflerin tek bir standart şekli vardır. Sadece kelimeyi bitirirken bazı harflerin sonunu süslüyoruz. Bunu standard klavye usulündeki gibi Shift ile sağlamak daha makbuldür.
+* Esasında harflerin tek bir standart şekli vardır. Sadece kelimeyi bitirirken bazı harflerin sonunu süsleriz. Bunu standard klavye usulündeki gibi Shift ile sağlamak daha makbuldür.
 
-### Keşide (ـ) Kullanımı
-
-Harflerin tabii görüntülerini elde etmek için Unicode cetveline yüzlerce yeni karakter eklemek tamamen bir data israfıdır. Bunun yerine bazı harflerin (`ج`, `ح`, `خ`, `س`, `ش`, `ص`, `ض`, `ع`, `غ`, `ق`, `ن`, `ه`, `ي` gibi) sondaki haline Shift ile ulaşılacak.
+* Harflerin tabii görüntülerini elde etmek için Unicode cetveline yüzlerce yeni karakter eklemek tamamen data israfıdır. Bunun yerine bazı harflerin (`ج`, `ح`, `خ`, `س`, `ش`, `ص`, `ض`, `ع`, `غ`, `ق`, `ن`, `ه`, `ي` gibi) sondaki haline Shift ile ulaşılacak.
 
 * Kendinden sonraki harfle birleşen diğer `ب`, `ت`, `ث`, `ط`, `ظ`, `ف`, `ك`, `ل`, `م` gibi harflerin hemen ucuna halihazırda klavyede var olan Arapça virgül **(،)** işareti geldiğinde, harf zaten kendi yalın görüntüsüne tabii olarak kavuşacaktır. **(Mesela: `بـ` + `،` = `ب`)**
+
+### Keşide (ـ) Kullanımı
 
 Unicode cetvelinde yer kaplayan Tatweel (ـ) karakteri tamamen sistemden kaldırılmalıdır.
 
@@ -53,24 +53,16 @@ Unicode cetvelinde yer kaplayan Tatweel (ـ) karakteri tamamen sistemden kaldır
 
 İslam coğrafyasındaki dillerin dijital imla karmaşasını çözen tasarruf hamleleri yapılmıştır:
 
-1. **Fazlalık Harflerin Elenmesi (J Sesi):** Türkçenin orijinal yapısında "J" (ژ) ünsüzü yoktur. Elifbede bu harfi barındırmak yerine, saf dudak-diş ünsüzü olan **"ڤ"** (V) harfi sabitlenmiştir. Klavye, Kürtçe gibi diller için ژ harfini barındırır.
-2. **Urduca ve Kürtçe Aspirasyon (Soluklaşma) Çözümü:** Urducadaki "Du Çeşm He" (ھ) harfine ihtiyaç yoktur. Kelimelerde aspirasyonu (hava üfleyerek okumayı) göstermek için sıradan **"ه"** harfi tek başına yeterlidir.
-
-* Kürtçe'de hava verilmeden okunan *Kêr* (Kâr) kelimesi **کێر** şeklinde yazılırken; hava üfleyerek okunan *Kêr* (Bıçak) kelimesi **کهێر** şeklinde yazılarak anlam karmaşası kökten çözülmüştür.
-* Urduca "Sert Te" (ٹ) harfine de ihtiyaç yoktur. Elifbede halihazırda bulunan Te (ت), Havalı Te (ته), The (ث), Tı (ط) formları, Urducadaki sesleri tam olarak karşılayabilmektedir.
-
-3. **Kürtçe ve Türkçe Okutucu Harf Çözümü:** Klasik imlada *ötre* (ö/ü) ve Kürtçedeki *zemme* (we/wi) telaffuzunun netleşmesi için ötre harf ile ifade edilerek, Unicode standardındaki **"ࢫ"** harfi sisteme dahil edilmiştir. (Mesela: Bul/Böl kelimelerini ayırmak için **بول\بࢫل** imlası geliştirilmiştir).
-
-## 5. TATBİKAT VE NUMUNAT
-
 ### Vav ve Ötrenin Kullanımı
 
 * Türkçe'de Vav `و` harfinin asli sesi "o/u" olup, Klasik Türkçede bu harf "o/u/v" sesleri için kullanılmıştır. Ancak Osmanlıcada Vav harfi, ince harflerde uzun "ö" ve nadiren uzun "ü" sesiyle ifade edilmiştir.
 * Ötre `ـُ` okutucusunun asli sesi "ö/ü" olup, Klasik Türkçe'de aynen ifade edilmiştir. Ancak Osmanlıcada Ötre, mutlak kalın harflerde kısa "u" ve nadiren kısa "o" sesiyle ifade edilmiştir.
 * Osmanlıca, Tanzimat devrinde uydurulmaya başlayan, günümüzde bir kesimin Öz Türkçe olarak tabir ettiği dilin atasıdır. Yani bu iki isim, esasında aynı uyduruk dildir. Türkçe, daha mahalli tabirle Oğuzca, masa başında uydurulan kelimelerden beri, tabii bir lisandır.
-* Kürtçe'de Waw `و` harfinin asli sesi "ô/û" olup, Klasik Kürtçede aynen ifade edilmiştir. Zemme `ـُ` okutucusunun asli sesi "we/wi" olup, Klasik Kürtçe'de aynen ifade edilmiştir.
+* Kürtçe'de Waw `و` harfinin asli sesi "ô/û" olup, Klasik Kürtçede aynen ifade edilmiştir. Zemme `ـُ` okutucusunun asli sesi ".we/.wi" olup, Klasik Kürtçe'de aynen ifade edilmiştir.
 
 ### Ötrenin Harf Formu به كࢫردي ضمه\تࢫركجه اࢫتره
+
+**Kürtçe ve Türkçe Okutucu Harf Çözümü:** Klasik imlada *ötre* (ö/ü) ve Kürtçedeki *zemme* (we/wi) telaffuzunun netleşmesi için ötre harf ile ifade edilerek, Unicode standardındaki **"ࢫ"** harfi sisteme dahil edilmiştir. (Mesela: Bul/Böl kelimelerini ayırmak için **بول\بࢫل** imlası geliştirilmiştir).
 
 Ötrenin harf formunu kiraat talebeleri için ࢫ karakteriyle ifade ettik. Aşağıda bazı misaller verilmiştir:
 
@@ -86,7 +78,7 @@ Unicode cetvelinde yer kaplayan Tatweel (ـ) karakteri tamamen sistemden kaldır
 
 ### Jeyn (ژ) Harfinin Tasfiyesi
 
-* Je harfi Kürtçe gibi İrani diller için zaruri olsa da, Türkçe için bu ses ج ve bazan ز\ش harfleriyle ifade edilebilir. Lakin ڤ sesi, Türkçe için elzemdir.
+* Türkçenin orijinal yapısında Je (ژ) ünsüzü yoktur. Elifbede bu harfi barındırmak yerine, saf dudak-diş ünsüzü olan **"ڤ"** (V) harfi sabitlenmiştir. Klavye, Kürtçe gibi diller için ژ harfini barındırır. Jeyn harfi Kürtçe gibi İrani diller için zaruri olsa da, Türkçe için bu ses ج ve bazan ز\ش harfleriyle ifade edilebilir. Lakin ڤ sesi, Türkçe için elzemdir. 
 * Eski Türkçe بار (var), بیر (ver) ve بول (ol) kelimeleri, Oğuzcada و harfiyle ifade edilip, وار ve ویر ve وول şeklinde imla edilmiştir. Vav harfi Türkçenin asli harflerinden biridir ancak V sesini ifade etmek için yeterli değildir, bu yüzden bu kelimeler günümüz Türkçesinde ڤار ve ڤىر ve اول şeklinde imla edilebilir.
 
 ### İmale Çözümü
@@ -96,21 +88,27 @@ Unicode cetvelinde yer kaplayan Tatweel (ـ) karakteri tamamen sistemden kaldır
 
 ### Havayla Okunan He (ه) Formu
 
+**Urduca ve Kürtçe Aspirasyon (Soluklaşma) Çözümü:** Urducadaki "Du Çeşm He" (ھ) harfine ihtiyaç yoktur. Kelimelerde aspirasyonu (hava üfleyerek okumayı) göstermek için sıradan **"ه"** harfi tek başına yeterlidir.
+
+* Kürtçe'de hava verilmeden okunan *Kêr* (Kâr) kelimesi **کێر** şeklinde yazılırken; hava üfleyerek okunan *Kêr* (Bıçak) kelimesi **کهێر** şeklinde yazılarak anlam karmaşası kökten çözülmüştür.
+* Urduca "Sert Te" (ٹ) harfine de ihtiyaç yoktur. Elifbede halihazırda bulunan Te (ت), Havalı Te (ته), The (ث), Tı (ط) formları, Urducadaki sesleri tam olarak karşılayabilmektedir.
+
+
 * Kürtçede `پ` `چ` `ت` `ك` harfleri bazı kelimelerde nefes vererek okunur. Mesela **چل** kelimesi "yarasa" manasına gelirken, چـ sesi nefesle okunduğunda "kırk" manasına gelir.
-* Nefesle okunan sesi ayırt etmek için, *Du Çeşm He* ile **چهـ** şeklinde yazıldığında, normal yazılan **چل** "yarasa" kelimesiyle, "kırk" manasındaki **چهل** kelimesini ayırmış oluruz.
+* Nefesle okunan sesi ayırt etmek için, *Du Çeşm He* ile **چهـ** şeklindeki gibi yazıldığında, normal yazılan **چل** "yarasa" kelimesiyle, "kırk" manasındaki **چهل** kelimesini ayırmış oluruz.
 * Du çeşm he harfini, nefes vererek okunan her kelimede kullanmaktan ziyade, kelimenin aslında ه bulunan veya birbirinden bu şekilde ayrılan kelimeler için kullanabiliriz: **تࢫ**(sen), **تهࢫ**(hiç), **كىر**(kâr), **كهىر**(bıçak), **تي**(sen ..eceksin), **تهي**(susamış).
 
 ### Hemze (ء) İçeren Kelimeler
 
 * Kürtçe **شئر** "aslan", **مئڤان** "misafir", **بئڤل** "burun", **بئن** "koku", **تئن** "hararet" kelimeleri yöreye göre *شىهر \ شىر* (şêr), *مىهڤان \ مىڤان* (mêvan), *بىهڤل \ بىڤل* (bêvil), *بىهن \ بىن* (bên), *تىهن \ تىن* (tên) şeklinde okunur. Bu varyasyona benzeyen, Arapça فهم (fehim) ve ذهن (zihin)'den gelen **فئم** ve **ذئن** kelimeleri zamanla Kürtçeleşerek فىهم \ فىم \ فَعم ve ذىهن \ ذىن şeklinde okunmaya başlamıştır.
 * Kürtçe **چأڤ** "göz" ve  **بأجان** "patlıcan" kelimeleri, umumen چَعڤ ve بَعجان şeklinde, bazan چاڤ ve باجان şeklinde okunur.
-* Arapçadan gelen **قرآن**، **أول**، **أرض**، **ألبت**، **أما** kelimelerinin orijinal telaffuzunda ا (elif) varken, Kürtçede bu kelimeler قُرعان، عَوِل، عَرد، هَلبَت، هَما gibi okunur.
+* Arapçadan gelen **قرآن**، **أول**، **أرض**، **ألبت**، **أما** kelimeleri, Kürtçede قُرعان، عَوِل، عَرد، هَلبَت، هَما gibi okunur.
 
-## 6. DİJİTAL MÜHENDİSLİK: KLAVYE TUŞ DÜZENİ
+## 5. DİJİTAL MÜHENDİSLİK: KLAVYE TUŞ DÜZENİ
 
-Bu vizyon, Microsoft altyapısı (MSKLC) ile derlenmiş ve çalışan bir yazılım teknolojisidir. Standard Q klavyesindeki kas hafızası aynen korunmuştur. Klavyenin bu versiyonu Türkçe Q düzenine, tam uyumlu tasarlanmıştır:
+Bu vizyon, Microsoft altyapısı (MSKLC) ile derlenmiş ve çalışan bir yazılım teknolojisidir. Standard Q klavyesindeki kas hafızası aynen korunmuştur. Klavyenin bu versiyonu mevcut Unicode sistemine ve Türkçe Q düzenine, tam uyumlu tasarlanmıştır:
 
-### Evrensel İslam Klavyesi Tuş Haritası:
+### Evrensel İslami Klavye Tuş Haritası:
 
 | Latin Tuşu | Normal Basış | Shift + Tuş | AltGr + Tuş |
 | --- | --- | --- | --- |
@@ -151,7 +149,7 @@ Bu vizyon, Microsoft altyapısı (MSKLC) ile derlenmiş ve çalışan bir yazıl
 | **.** / **Ç** | چ (Çim) | ݮ (Altında Tı Olan Ha) | 9 (Rakam) |
 | **/** / **.** | . (Nokta) | : (İki Nokta) | 0 (Rakam) |
 
-## 7. BU NİZAMIN FAYDALARI VE İNDİRME
+## 6. BU NİZAMIN FAYDALARI
 
 1. **Data Tasarrufu:** Unicode standartlarında İslam dünyası için ayrılan yüzlerce karakterlik hantal alan, sadece birkaç on karaktere düşerek dijital depolama ve veritabanı boyutlarını küçültecektir.
 2. **AI ve NLP Hızı:** Büyük dil modelleri (LLM) ve suni zeka algoritmaları, Elifbe tabanlı metinleri işlerken çok daha hızlı tabii dil işleme (NLP) yapabilecektir.
@@ -159,8 +157,8 @@ Bu vizyon, Microsoft altyapısı (MSKLC) ile derlenmiş ve çalışan bir yazıl
 
 *Bu tavsiye, dijital ortografide tasarruf ve global standardizasyon sağlamak gayesiyle açık kaynak olarak tartışmaya sunulmuştur.*
 
-### Bağlantı
+### İndirme
 
-Bu sistemin çalışır haldeki Windows kurulum dosyasını (`setup.exe`) ve kaynak kodlarını (`islami.klc`) tek bir paket halinde indirmek, kendi aranızdaki yazışmalarda bu standardı kullanmak için aşağıdaki bağlantıyı kullanabilirsiniz:
+Bu sistemin çalışır haldeki Windows kurulum dosyasını (`setup.exe`) ve kaynak kodlarını (`islami.klc`) tek bir paket halinde, kendi aranızdaki yazışmalarda bu standardı kullanmak için *[buradan](https://github.com/Abdurrahmancv/alifba)* indirebilirsiniz:
 
 *([👉 KLAVYEYİ VE COĞRAFYALARI BİRLEŞTİREN YAZILIMI HEMEN TECRÜBE EDİN 👈](https://abdurrahmancv.github.io/alifba))*
