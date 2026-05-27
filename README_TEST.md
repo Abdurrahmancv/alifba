@@ -2,8 +2,7 @@
 
 **Yazar:** Abdurrahman Çevik  
 **Konum:** Mardin, Artuklu  
-**E-posta:** abdurrahmancevik2005@gmail.com  
-**Lisans:** MIT License
+**E-posta:** abdurrahmancevik2005@gmail.com
 
 ---
 
@@ -11,7 +10,7 @@
 
 Bu proje, küresel savaşların ve politik kutuplaşmaların anlamsızlığına inanan; insanlığın dürüstlük, samimiyet ve iyi niyetle ortak bir ilmi zeminde buluşmasını hedefleyen evrensel bir medeniyet hareketidir. Bizi birleştiren en güçlü unsur İslam medeniyetidir. İslam coğrafyasındaki halklar (Kürtler, Türkler, Farslar, Araplar, Urdular..) kendi dillerinin özgün seslerini koruyarak, dijital dünyada ortak bir elifbe çatısı altında birleşebilirler. Bu sistem, dilleri, aslına sadık kalarak kıraati kolaylaştıran bir "orta yol" çözümüdür.
 
-## 2. MEVCUT SİSTEMİN ZAAFİYETİ: Unicode ve Veri İsrafı
+## 2. MEVCUT SİSTEMİN ZAAFİYETİ: Unicode ve Data İsrafı
 
 Mevcut Unicode standartlarında, Arap tabanlı alfabeler (Arapça, Farsça, Türkçe, Kürtçe, Urduca..) ekrana basılırken hantal bir yapı kullanılır:
 
@@ -55,8 +54,8 @@ Unicode cetvelinde yer kaplayan Tatweel (ـ) karakteri tamamen sistemden kaldır
 
 ### Vav ve Ötrenin Kullanımı
 
-* Türkçe'de Vav `و` harfinin asli sesi "o/u" olup, Klasik Türkçede bu harf "o/u/v" sesleri için kullanılmıştır. Ancak Osmanlıcada Vav harfi, ince harflerde uzun "ö" ve nadiren uzun "ü" sesiyle ifade edilmiştir.
-* Ötre `ـُ` okutucusunun asli sesi "ö/ü" olup, Klasik Türkçe'de aynen ifade edilmiştir. Ancak Osmanlıcada Ötre, mutlak kalın harflerde kısa "u" ve nadiren kısa "o" sesiyle ifade edilmiştir.
+* Türkçe'de Vav `و` harfinin asli sesi "o/u" olup, Klasik Türkçede bu harf "o/u/v" sesleri için kullanılmıştır. Ancak Osmanlıcada Vav harfi, ince harflerde uzun "ö" ve nadiren uzun "ü" sesiyle ifade edilmiştir. İnce harfle yan yana gelse bile aslı kalındır.
+* Ötre `ـُ` okutucusunun asli sesi "ö/ü" olup, Klasik Türkçe'de aynen ifade edilmiştir. Ancak Osmanlıcada Ötre, mutlak kalın harflerde kısa "u" ve nadiren kısa "o" sesiyle ifade edilmiştir. Kalın harfle yan yana gelse bile aslı incedir.
 * Osmanlıca, Tanzimat devrinde uydurulmaya başlayan, günümüzde bir kesimin Öz Türkçe olarak tabir ettiği dilin atasıdır. Yani bu iki isim, esasında aynı uyduruk dildir. Türkçe, daha mahalli tabirle Oğuzca, masa başında uydurulan kelimelerden beri, tabii bir lisandır.
 * Kürtçe'de Waw `و` harfinin asli sesi "ô/û" olup, Klasik Kürtçede aynen ifade edilmiştir. Zemme `ـُ` okutucusunun asli sesi ".we/.wi" olup, Klasik Kürtçe'de aynen ifade edilmiştir.
 
@@ -66,20 +65,20 @@ Unicode cetvelinde yer kaplayan Tatweel (ـ) karakteri tamamen sistemden kaldır
 
 Ötrenin harf formunu kiraat talebeleri için ࢫ karakteriyle ifade ettik. Aşağıda bazı misaller verilmiştir:
 
-#### Türkçe Misaller:
+**Türkçe Misaller:**
 
 * Vav ile اوردی (ordu), سور (sur), كوشه (köşe), كوفی (küfi).
 * Ötre ile عࢫمر (ömer), اࢫست (üst), نࢫقطه (nokta), طࢫغرࢫل (tuğrul).
 
-#### Misalên Kurdî:
+**Misalên Kurdî:**
 
 * Waw ile اوستا(ôste), شࢫور(şûr), دوست(dôst), هࢫور(hûr).
 * Zemme ile خࢫستن(xwestin), خࢫين(xwîn), خࢫار(xwar), گࢫه(guh), دࢫهو(dohô).
 
 ### Jeyn (ژ) Harfinin Tasfiyesi
 
-* Türkçenin orijinal yapısında Je (ژ) ünsüzü yoktur. Elifbede bu harfi barındırmak yerine, saf dudak-diş ünsüzü olan **"ڤ"** (V) harfi sabitlenmiştir. Klavye, Kürtçe gibi diller için ژ harfini barındırır. Jeyn harfi Kürtçe gibi İrani diller için zaruri olsa da, Türkçe için bu ses ج ve bazan ز\ش harfleriyle ifade edilebilir. Lakin ڤ sesi, Türkçe için elzemdir. 
-* Eski Türkçe بار (var), بیر (ver) ve بول (ol) kelimeleri, Oğuzcada و harfiyle ifade edilip, وار ve ویر ve وول şeklinde imla edilmiştir. Vav harfi Türkçenin asli harflerinden biridir ancak V sesini ifade etmek için yeterli değildir, bu yüzden bu kelimeler günümüz Türkçesinde ڤار ve ڤىر ve اول şeklinde imla edilebilir.
+* Türkçenin orijinal yapısında Je (ژ) ünsüzü yoktur. Elifbede bu harfi barındırmak yerine, saf dudak-diş ünsüzü olan **"ڤ"** (V) harfi sabitlenmiştir. Klavye, Kürtçe gibi diller için ژ harfini barındırır. Jeyn harfi Kürtçe gibi İrani diller için zaruri olsa da, Türkçe için bu ses ج ve bazan ز\ش harfleriyle ifade edilebilir. (Mesela: شارز\شارج "şarj", جاله "jale", جندارمه "jandarma") Lakin ڤ sesi, Türkçe için elzemdir. 
+* Eski Türkçe بار (var), بیر (ver) ve بول (ol) kelimeleri, Oğuzcada و harfiyle ifade edilip, وار ve ویر ve وول şeklinde imla edilmiştir. Vav harfi Türkçenin asli harflerinden biridir ancak V sesini ifade etmek için yeterli değildir, bu yüzden bu kelimeler günümüz Türkçesinde ڤار ve ڤىر ve اول şeklinde imla edilebilir. Mesela: تله‌ڤيزيون "televizyon", باغچڤان "bahçıvan". Asli sesi "û" olan sesler yine و ile yazılır. Mesela: وادي "vadi", وطن "vatan".
 
 ### İmale Çözümü
 
@@ -90,13 +89,13 @@ Unicode cetvelinde yer kaplayan Tatweel (ـ) karakteri tamamen sistemden kaldır
 
 **Urduca ve Kürtçe Aspirasyon (Soluklaşma) Çözümü:** Urducadaki "Du Çeşm He" (ھ) harfine ihtiyaç yoktur. Kelimelerde aspirasyonu (hava üfleyerek okumayı) göstermek için sıradan **"ه"** harfi tek başına yeterlidir.
 
-* Kürtçe'de hava verilmeden okunan *Kêr* (Kâr) kelimesi **کێر** şeklinde yazılırken; hava üfleyerek okunan *Kêr* (Bıçak) kelimesi **کهێر** şeklinde yazılarak anlam karmaşası kökten çözülmüştür.
-* Urduca "Sert Te" (ٹ) harfine de ihtiyaç yoktur. Elifbede halihazırda bulunan Te (ت), Havalı Te (ته), The (ث), Tı (ط) formları, Urducadaki sesleri tam olarak karşılayabilmektedir.
-
-
 * Kürtçede `پ` `چ` `ت` `ك` harfleri bazı kelimelerde nefes vererek okunur. Mesela **چل** kelimesi "yarasa" manasına gelirken, چـ sesi nefesle okunduğunda "kırk" manasına gelir.
 * Nefesle okunan sesi ayırt etmek için, *Du Çeşm He* ile **چهـ** şeklindeki gibi yazıldığında, normal yazılan **چل** "yarasa" kelimesiyle, "kırk" manasındaki **چهل** kelimesini ayırmış oluruz.
+* Kürtçe'de hava verilmeden okunan *Kêr* (Kâr) kelimesi **کێر** şeklinde yazılırken; hava üfleyerek okunan *Kêr* (Bıçak) kelimesi **کهێر** şeklinde yazılarak anlam karmaşası kökten çözülmüştür.
 * Du çeşm he harfini, nefes vererek okunan her kelimede kullanmaktan ziyade, kelimenin aslında ه bulunan veya birbirinden bu şekilde ayrılan kelimeler için kullanabiliriz: **تࢫ**(sen), **تهࢫ**(hiç), **كىر**(kâr), **كهىر**(bıçak), **تي**(sen ..eceksin), **تهي**(susamış).
+
+* Urduca "Sert Te" (ٹ) harfine de ihtiyaç yoktur. Elifbede halihazırda bulunan Te (ت), Havalı Te (ته), The (ث), Tı (ط) formları, Urducadaki sesleri tam olarak karşılayabilmektedir.
+
 
 ### Hemze (ء) İçeren Kelimeler
 
