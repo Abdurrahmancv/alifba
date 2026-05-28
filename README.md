@@ -10,11 +10,11 @@
 
 Bu proje, küresel savaşların ve politik kutuplaşmaların anlamsızlığına inanan; insanlığın dürüstlük, samimiyet ve iyi niyetle ortak bir ilmi zeminde buluşmasını hedefleyen evrensel bir medeniyet hareketidir. Bizi birleştiren en güçlü unsur İslam medeniyetidir.
 
-İslam coğrafyasındaki halklar (Kürtler, Türkler, Farslar, Araplar, Urdular..) kendi dillerinin özgün seslerini koruyarak, dijital dünyada ortak bir elifbe çatısı altında birleşebilirler. Bu sistem, dilleri, aslına sadık kalarak kıraati kolaylaştıran bir "orta yol" çözümüdür.
+İslam coğrafyasındaki halklar (Kürtler, Türkler, Farslar, Araplar, Urdular..) kendi dillerinin özgün seslerini koruyarak, dijital dünyada ortak bir elifbe çatısı altında birleşebilirler. Bu sistem, dilleri aslına sadık kalarak, kıraati kolaylaştıran bir "orta yol" çözümüdür.
 
 ## 2. MEVCUT SİSTEMİN ZAAFİYETİ: Unicode ve Data İsrafı
 
-Mevcut Unicode standartlarında, Arap tabanlı alfabeler (Arapça, Farsça, Türkçe, Kürtçe, Urduca..) ekrana basılırken hantal bir yapı kullanılır:
+Unicode standartlarında, Elifbe tabanlı diller (Arapça, Farsça, Türkçe, Kürtçe, Urduca..) ekrana basılırken hantal bir yapı kullanılır:
 
 1. **0x06 Sırası (Standard Kodlar):** Harflerin sadece ham karakter değerini tutar.
 2. **Presentation Forms (Sunum Biçimleri / 0xFB50 - 0xFEFF Sırası):** Bilgisayarın font motoru harfin başta, ortada, sonda veya yalın olduğunu hesaplaması için yüzlerce gereksiz alan işgal eder.
@@ -23,24 +23,25 @@ Bu durum veritabanlarında yer kaplar ve OpenType mimarları için hantal yazıl
 
 *Yazının estetik görünmesi için kullanılan, harflerin diğer formları (ortadaki, sondaki ve hususi formlar) bu sırada yer alabilir. Bu haliyle estetlik formlar, mevcut ayrılan alandan çok daha az yer kaplar.*
 
-## 3. MİMARİ ÇÖZÜM: Harflerde 4 Form Yoktur
+## 3. MİMARİ ÇÖZÜM: Harflerde En Fazla 2 Form Vardır
 
-Tavsiye ettiğimiz bu ortografik reform, bilgisayarların font işleme mantığını kökten sadeleştirmektedir. Bu proje ile elifbenin matematikal bir tasarrufa sahip olduğunu isbatlıyoruz:
+Tavsiye ettiğimiz bu ortografik nizam ile, bilgisayarların font işleme mantığını kökten sadeleştirerek, elifbenin matematikal bir tasarrufa sahip olduğunu isbatlıyoruz:
 
-* **2 Formlular (Kendinden sonra birleşenler):** Sadece iki şekli vardır; bağlantılı form (kelime başı/ortası) ve bağlantısız form (kelime sonu/yalın).
+* **2 Formlular (Kendinden sonra birleşenler):** Sadece iki şekli vardır; bağlantılı form (başta/ortada) ve bağlantısız form (sonda/yalın).
 * **1 Formlular (Kendinden sonra birleşmeyenler):** Elif, Dal, Zel, Ra, Ze, Je, Vav gibi harfler her yerde aynı yazılır, sadece arkasındaki harf bağlanır.
-* **Harflerde 4 Form Yoktur:** Elifbede mesele sadece harfin kendinden sonraki harfe bağlanıp bağlanmamasıdır.
 
-Unicode cetvelindeki tüm "Arapça Sunum Biçimleri" (Presentation Forms) reform edilmeli, harfler sadece **iki forma (Başta ve Sonda)** indirilmelidir:
+*Harflerde 4 form yoktur, elifbede mesele sadece harfin kendinden sonraki harfe bağlanıp bağlanmamasıdır.*
+
+Unicode cetvelindeki tüm "Arapça Sunum Biçimleri" (Presentation Forms) reform edilmeli, harfler **baştaki form** ve **yalın form** olmak üzere sadece iki forma indirilmelidir.
 
 ### 0x06 Sırasının Yeniden Tasarlanması (Başta/Bağlantılı Form)
 
-Harflerin yalın hallerinin bulunduğu orijinal **0x06** tablosunda, harfler doğrudan **baştaki / kendinden sonrakiyle birleşen formuyla (Mesela: `بـ`)** tutulmalıdır.
+Harflerin yalın hallerinin bulunduğu orijinal **0x06** tablosunda, harfler doğrudan **baştaki** yani **kendinden sonrakiyle birleşen** formuyla (Mesela: `بـ`) tutulmalıdır.
 
 * Bu sayede kullanıcı harfe bastığı an, karakter otomatik olarak bir sonraki harfe akmaya ve el ele tutuşmaya hazır olur.
 * Esasında harflerin tek bir standart şekli vardır. Sadece kelimeyi bitirirken bazı harflerin sonunu süsleriz. Bunu standard klavye usulündeki gibi Shift ile sağlamak daha makbuldür.
 
-* Harflerin tabii görüntülerini elde etmek için Unicode cetveline yüzlerce yeni karakter eklemek tamamen data israfıdır. Bunun yerine bazı harflerin (`ج`, `ح`, `خ`, `س`, `ش`, `ص`, `ض`, `ع`, `غ`, `ق`, `ن`, `ه`, `ي` gibi) sondaki haline Shift ile ulaşılacak.
+* Harflerin tabii görüntülerini elde etmek için Unicode cetveline yüzlerce yeni karakter eklemek sadece data israfıdır. Bunun yerine bazı harflerin (`ج`, `ح`, `خ`, `س`, `ش`, `ص`, `ض`, `ع`, `غ`, `ق`, `ن`, `ه`, `ي` gibi) sondaki haline Shift ile ulaşılacak.
 
 * Kendinden sonraki harfle birleşen diğer `ب`, `ت`, `ث`, `ط`, `ظ`, `ف`, `ك`, `ل`, `م` gibi harflerin hemen ucuna halihazırda klavyede var olan Arapça virgül **(،)** işareti geldiğinde, harf zaten kendi yalın görüntüsüne tabii olarak kavuşacaktır. **(Mesela: `بـ` + `،` = `ب`)**
 
@@ -56,14 +57,14 @@ Unicode cetvelinde yer kaplayan Tatweel (ـ) karakteri tamamen sistemden kaldır
 
 ### Vav ve Ötrenin Kullanımı
 
-* Türkçe'de Vav `و` harfinin asli sesi "o/u" olup, Klasik Türkçede bu harf "o/u/v" sesleri için kullanılmıştır. Ancak Osmanlıcada Vav harfi, ince harflerde uzun "ö" ve nadiren uzun "ü" sesiyle ifade edilmiştir. İnce harfle yan yana gelse bile aslı kalındır.
-* Ötre `ـُ` okutucusunun asli sesi "ö/ü" olup, Klasik Türkçe'de aynen ifade edilmiştir. Ancak Osmanlıcada Ötre, mutlak kalın harflerde kısa "u" ve nadiren kısa "o" sesiyle ifade edilmiştir. Kalın harfle yan yana gelse bile aslı incedir.
-* Osmanlıca, Tanzimat devrinde uydurulmaya başlayan, günümüzde bir kesimin Öz Türkçe olarak tabir ettiği dilin atasıdır. Yani bu iki isim, esasında aynı uyduruk dildir. Türkçe, daha mahalli tabirle Oğuzca, masa başında uydurulan kelimelerden beri, tabii bir lisandır.
-* Kürtçe'de Waw `و` harfinin asli sesi "ô/û" olup, Klasik Kürtçede aynen ifade edilmiştir. Zemme `ـُ` okutucusunun asli sesi ".we/.wi" olup, Klasik Kürtçe'de aynen ifade edilmiştir.
+* Türkçe Vav `و` harfinin asli sesi "o/u" olup, Klasik Türkçede bu harf "v" için de kullanılmıştır. Mutlak ince bir harfe temas etse dahi Vav'ın aslı kalındır.
+* Kürtçe Waw `و` harfinin asli sesi "ô/û" olup, Klasik Kürtçede aynen ifade edilmiştir.
+* Ötre `ـُ` okutucusunun asli sesi "ö/ü" olup, Klasik Türkçe'de aynen ifade edilmiştir. Mutlak kalın bir harfe temas etse bile Ötre'nin aslı incedir.
+* Zemme `ـُ` okutucusunun asli sesi "ue/ui" olup, Klasik Kürtçe'de aynen ifade edilmiştir.
 
 ### Ötrenin Harf Formu به كࢫردي ضمه\تࢫركجه اࢫتره
 
-**Kürtçe ve Türkçe Okutucu Harf Çözümü:** Klasik imlada *ötre* (ö/ü) ve Kürtçedeki *zemme* (we/wi) telaffuzunun netleşmesi için ötre harf ile ifade edilerek, Unicode standardındaki **"ࢫ"** harfi sisteme dahil edilmiştir. (Mesela: Bul/Böl kelimelerini ayırmak için **بول\بࢫل** imlası geliştirilmiştir).
+**Kürtçe ve Türkçe Okutucu Harf Çözümü:** Klasik imlada *ötre* (ö/ü) ve Kürtçedeki *zemme* (ue/ui) telaffuzunun netleşmesi için ötre harf ile ifade edilerek, Unicode standardındaki **"ࢫ"** harfi sisteme dahil edilmiştir. Mesela: **بࢫل** (böl), **بول** (bul).
 
 Ötrenin harf formunu kiraat talebeleri için ࢫ karakteriyle ifade ettik. Aşağıda bazı misaller verilmiştir:
 
@@ -75,17 +76,17 @@ Unicode cetvelinde yer kaplayan Tatweel (ـ) karakteri tamamen sistemden kaldır
 **Misalên Kurdî:**
 
 * Waw ile اوستا(ôste), شࢫور(şûr), دوست(dôst), هࢫور(hûr).
-* Zemme ile خࢫستن(xwestin), خࢫين(xwîn), خࢫار(xwar), گࢫه(guh), دࢫهو(dohô).
+* Zemme ile خࢫستن(xuestin), خࢫين(xuîn), خࢫار(xuar), گࢫه(guh), دࢫهو(dohô).
 
 ### Jeyn (ژ) Harfinin Tasfiyesi
 
-* Türkçenin orijinal yapısında Je (ژ) ünsüzü yoktur. Elifbede bu harfi barındırmak yerine, saf dudak-diş ünsüzü olan **"ڤ"** (V) harfi sabitlenmiştir. Klavye, Kürtçe gibi diller için ژ harfini barındırır. Jeyn harfi Kürtçe gibi İrani diller için zaruri olsa da, Türkçe için bu ses ج ve bazan ز\ش harfleriyle ifade edilebilir. (Mesela: شارز\شارج "şarj", جاله "jale", جندارمه "jandarma") Lakin ڤ sesi, Türkçe için elzemdir. 
-* Eski Türkçe بار (var), بیر (ver) ve بول (ol) kelimeleri, Oğuzcada و harfiyle ifade edilip, وار ve ویر ve وول şeklinde imla edilmiştir. Vav harfi Türkçenin asli harflerinden biridir ancak V sesini ifade etmek için yeterli değildir, bu yüzden bu kelimeler günümüz Türkçesinde ڤار ve ڤىر ve اول şeklinde imla edilebilir. Mesela: تله‌ڤيزيون "televizyon", باغچڤان "bahçıvan". Asli sesi "û" olan sesler yine و ile yazılır. Mesela: وادي "vadi", وطن "vatan".
+* Türkçenin yapısında Je (ژ) ünsüzü yoktur. Elifbede bu harfi barındırmak yerine, saf dudak-diş ünsüzü olan **"ڤ"** (V) harfi sabitlenmiştir. Klavye, Kürtçe gibi diller için ژ harfini barındırır. Jeyn harfi Kürtçe gibi İrani diller için zaruri olsa da, Türkçe için bu ses ج ve bazan ز\ش harfleriyle ifade edilebilir. (Mesela: شارز\شارج "şarj", جاله "jale", جندارمه "jandarma") Lakin ڤ sesi, Türkçe için elzemdir. 
+* Eski Türkçe بار (var), بیر (ver) ve بول (ol) kelimeleri, Oğuzcada و harfiyle ifade edilip, وار ve ویر ve وول şeklinde imla edilmiştir. Vav harfi Türkçenin asli harflerinden biridir ancak V sesini ifade etmek için yeterli değildir, bu yüzden bu kelimeler günümüz Türkçesinde ڤار ve ڤىر ve اول şeklinde imla edilebilir. Asli sesi "v" olan sesler için: تله‌ڤيزيون "televizyon", باغچڤان "bahçıvan". Asli sesi "û" olan sesler yine و ile yazılır: وادي "vadi", وطن "vatan".
 
 ### İmale Çözümü
 
 * İmale hem Kürtçe'de hem de Türkçe'de bulunan bir okutucudur ve ی (ye) harfiyle ifade edilir.
-* Ye Harfi Türkçede `kesre "ı/i"`, `imale "e"` ve asli `ye "y"` sesi için kullanılır. Bu üç okutucuyu imlada ayırmak maksadıyla kesre için يـ ى formu, imale için ىـ ى formu ve asli ye için يـ ي formu kullanılabilir: ييل(yıl), قير(kır), كير(kir), اخلاقى(ahlakı), اخلاقي(ahlaki), ڤىرش(veriş), دىيش(deyiş), گىج(geç), گىجه(gece), اىرش(eriş), اىركن(erken), هوى(heva), معنى(mana), دعوى(dava), فتوى(fetva), موسى(musa), عيسى(isa), مصطفى(mustafa).
+* Ye Harfi Türkçede `kesre "ı/i"`, `imale "e"` ve asli `ye "y"` sesi için kullanılır. Bu üç okutucuyu imlada ayırmak maksadıyla kesre için يـ ى formu, imale için ىـ ى formu ve asli ye için يـ ي formu kullanılabilir: ييل(yıl), قير(kır), كير(kir), اخلاقى(ahlakı), اخلاقي(ahlaki), ڤىرش(veriş), دىيش(deyiş), گىج(geç), گىجه(gece), اىرش(eriş), اىركن(erken), دعوى(dava), معنى(mana), هوى(heva), فتوى(fetva), موسى(musa), عيسى(isa), مصطفى(mustafa).
 
 ### Havayla Okunan He (ه) Formu
 
@@ -93,10 +94,10 @@ Unicode cetvelinde yer kaplayan Tatweel (ـ) karakteri tamamen sistemden kaldır
 
 * Kürtçede `پ` `چ` `ت` `ك` harfleri bazı kelimelerde nefes vererek okunur. Mesela **چل** kelimesi "yarasa" manasına gelirken, چـ sesi nefesle okunduğunda "kırk" manasına gelir.
 * Nefesle okunan sesi ayırt etmek için, *Du Çeşm He* ile **چهـ** şeklindeki gibi yazıldığında, normal yazılan **چل** "yarasa" kelimesiyle, "kırk" manasındaki **چهل** kelimesini ayırmış oluruz.
-* Kürtçe'de hava verilmeden okunan *Kêr* (Kâr) kelimesi **کێر** şeklinde yazılırken; hava üfleyerek okunan *Kêr* (Bıçak) kelimesi **کهێر** şeklinde yazılarak anlam karmaşası kökten çözülmüştür.
+* Kürtçe'de nefes vermeden okunan *Kêr* (Kâr) kelimesi **کێر** şeklinde yazılırken; nefes vererek okunan *Kêr* (Bıçak) kelimesi **کهێر** şeklinde yazılarak anlam karmaşası kökten çözülmüştür.
 * Du çeşm he harfini, nefes vererek okunan her kelimede kullanmaktan ziyade, kelimenin aslında ه bulunan veya birbirinden bu şekilde ayrılan kelimeler için kullanabiliriz: **تࢫ**(sen), **تهࢫ**(hiç), **كىر**(kâr), **كهىر**(bıçak), **تي**(sen ..eceksin), **تهي**(susamış).
 
-* Urduca "Sert Te" (ٹ) harfine de ihtiyaç yoktur. Elifbede halihazırda bulunan Te (ت), Havalı Te (ته), The (ث), Tı (ط) formları, Urducadaki sesleri tam olarak karşılayabilmektedir.
+* Urduca "Sert Te" (ٹ) harfine de ihtiyaç yoktur. Hlihazırda bulunan Te (ت), Havalı Te (ته), The (ث), Tı (ط) formları, Urducadaki sesleri tam olarak karşılayabilmektedir.
 
 
 ### Hemze (ء) İçeren Kelimeler
