@@ -12,6 +12,19 @@ Bu proje, küresel savaşların ve politik kutuplaşmaların anlamsızlığına 
 
 İslam coğrafyasındaki halklar (Kürtler, Türkler, Farslar, Araplar, Urdular..) kendi dillerinin özgün seslerini koruyarak, dijital dünyada ortak bir elifbe çatısı altında birleşebilirler. Bu sistem, dilleri aslına sadık kalarak, kıraati kolaylaştıran bir "orta yol" çözümüdür.
 
+### Neden Başka Bir Yazı Sistemi Değil de Elifbe?
+
+Bu evrensel nizamda nihai hedefimiz, tüm dilleri bu ortak elifbe çatısı altında birleştirmektir. Bu noktada akla şu sual gelebilir: *"Neden Çin, Japon, Hind yazıları veya Yunan, Latin, Kiril alfabeleri değil de Arap harfleri?"*
+
+bunun cevabı hem mukaddes hem de tekniktir:
+
+1. **Mukkaddes Sebep:** Arapça, bilhassa Fushâ (Fasih Arapça), vahy-i ilahinin nazil olduğu Kur'an dilidir. Her bir İslam neferinin zihnen, ruhen ve ilmen hakim olması gereken, ümmeti manen birbirine bağlayan yegane ortak bağdır.
+2. **Teknik Sebep:** Doğu Asya (Çin, Japon vb.) yazı sistemleri ideografik/kendine mahsus olup öğrenmesi, dijitalleştirilmesi ve yazması son derece zordur. Arap elifbesi ise yeryüzündeki tüm alfabelerin ortak atası kabul edilen Fenike harflerine morfolojik olarak en sadık kalan, karakter yapısı itibarıyla en yaygın, akışkan ve pratik geometrik forma sahip yazı sistemidir. 
+
+Bu yönüyle Elifbe, insanlığın ortak yazı mirasını uzun vadede taşımak adına en makul "orta yol" prensipidir.
+
+
+
 ## 2. MEVCUT SİSTEMİN ZAAFİYETİ: Unicode ve Data İsrafı
 
 Unicode standartlarında, Elifbe tabanlı diller (Arapça, Farsça, Türkçe, Kürtçe, Urduca..) ekrana basılırken hantal bir yapı kullanılır:
@@ -40,6 +53,7 @@ Harflerin yalın hallerinin bulunduğu orijinal **0x06** tablosunda, harfler do�
 
 * Bu sayede kullanıcı harfe bastığı an, karakter otomatik olarak bir sonraki harfe akmaya ve el ele tutuşmaya hazır olur.
 * Esasında harflerin tek bir standart şekli vardır. Sadece kelimeyi bitirirken bazı harflerin sonunu süsleriz. Bunu standard klavye usulündeki gibi Shift ile sağlamak daha makbuldür.
+* Shift ile basmadan da, yalın hali olan hallerin yalın görüntüsünü elde etmek için boşluk bırakılır ve tekrar Backspace yapılsa da harf yalın görüntüsüyle kalır.
 
 * Harflerin tabii görüntülerini elde etmek için Unicode cetveline yüzlerce yeni karakter eklemek sadece data israfıdır. Bunun yerine bazı harflerin (`ج`, `ح`, `خ`, `س`, `ش`, `ص`, `ض`, `ع`, `غ`, `ق`, `ن`, `ه`, `ي` gibi) sondaki haline Shift ile ulaşılacak.
 
@@ -54,6 +68,30 @@ Unicode cetvelinde yer kaplayan Tatweel (ـ) karakteri tamamen sistemden kaldır
 ## 4. DİLLERİN SES İHTİYAÇLARINA GÖRE TASARRUF
 
 İslam coğrafyasındaki dillerin dijital imla karmaşasını çözen tasarruf hamleleri yapılmıştır:
+
+
+
+### Türkçede Harekelerin Ses Değeri
+
+Türkçedeki ses geçişleri (ünlü uyumlarını) ek bir karaktere ihtiyaç duymadan, harfin kendi tabiatıyla (kalınlık-incelik durumuyla) doğal olarak çözmesidir. Temel harekelerin asli ses karşılıkları şöyledir:
+
+* **Ötre (ـُ):** Asli olarak **ö/ü** sesini verir. Kelimede kalın bir harf (Sad, Kaf, Tı vb.) veya uzun elif/vav bulunması durumunda ise kalınlaşarak **o/u** sesine dönüşür.
+* **Üstün (ـَ):** Asli olarak **e** sesini (Azerbaycan Türkçesindeki açık *ə* sesi gibi) verir. Kelimede kalın harf veya uzatıcı unsur varsa kısa **a** sesine dönüşür.
+* **Kesre (ـِ):** Asli olarak ince harflerde kısa **i** sesini verir. Kalın harflerin refakatinde ise kısa **ı** sesine evrilir.
+
+Bu kuramsal kaidenin netleşmesi için dillerden bazı mühim emsal aşağıda ifade edilmiştir:
+
+
+| Hareke | İnce Okunuş | Kalın Okunuş | Kalınlaşma Sebebi |
+| :--- | :--- | :--- | :--- |
+| **Ötre (ـُ)** | **شُهرت** (Şöhret) <br> **مُهم** (Mühim) | **عُثمان** (Osman) <br> **عُنصُر** (Unsur) | Uzun Elif (ا) etkisi <br> Sad (ص) gibi kalın harf etkisi |
+| **Üstün (َ)** | **شَهر** (Şehir) | **یَهودی** (Yahudi) | Uzun Vav (و) etkisi |
+| **Kesre (ِ)** | **بِر** (Bir) | **قِزِل** (Kızıl) | Kaf (ق) gibi kalın harf etkisi |
+
+Bu doğal fonetik esneklik sayesinde, bilgisayarın metin okuma (TTS) motorları, harfin kalınlık-incelik sınıfına bakarak harekenin ses değerini yapay zekaya ihtiyaç duymadan, saf matematiksel bir algoritmayla doğru telaffuz edebilir.
+
+
+
 
 ### Vav ve Ötrenin Kullanımı
 
@@ -80,7 +118,7 @@ Unicode cetvelinde yer kaplayan Tatweel (ـ) karakteri tamamen sistemden kaldır
 
 ### Jeyn (ژ) Harfinin Tasfiyesi
 
-* Türkçenin yapısında Je (ژ) ünsüzü yoktur. Elifbede bu harfi barındırmak yerine, saf dudak-diş ünsüzü olan **"ڤ"** (V) harfi sabitlenmiştir. Klavye, Kürtçe gibi diller için ژ harfini barındırır. Jeyn harfi Kürtçe gibi İrani diller için zaruri olsa da, Türkçe için bu ses ج ve bazan ز\ش harfleriyle ifade edilebilir. (Mesela: شارز\شارج "şarj", جاله "jale", جندارمه "jandarma") Lakin ڤ sesi, Türkçe için elzemdir. 
+* Türkçenin yapısında Je (ژ) ünsüzü yoktur. Türkçede bu harfi barındırmak yerine, saf dudak-diş ünsüzü olan **"ڤ"** (V) harfi sabitlenmiştir. Klavye, Kürtçe gibi diller için ژ harfini barındırır. Jeyn harfi Kürtçe gibi İrani diller için zaruri olsa da, Türkçede bu ses ج ve bazan ز\ش harfleriyle ifade edilebilir. (Mesela: شارز\شارج "şarj", جاله "jale", جندارمه "jandarma") Lakin ڤ sesi, Türkçe için elzemdir.
 * Eski Türkçe بار (var), بیر (ver) ve بول (ol) kelimeleri, Oğuzcada و harfiyle ifade edilip, وار ve ویر ve وول şeklinde imla edilmiştir. Vav harfi Türkçenin asli harflerinden biridir ancak V sesini ifade etmek için yeterli değildir, bu yüzden bu kelimeler günümüz Türkçesinde ڤار ve ڤىر ve اول şeklinde imla edilebilir. Asli sesi "v" olan sesler için: تله‌ڤيزيون "televizyon", باغچڤان "bahçıvan". Asli sesi "û" olan sesler yine و ile yazılır: وادي "vadi", وطن "vatan".
 
 ### İmale Çözümü
