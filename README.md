@@ -63,6 +63,8 @@ Harfler yer aldığı **0x06** Unicode tablosunda, doğrudan bağlantılı formu
 - **Mevcut Unicode:** Be harfi = 5 farklı kod / 4 farklı karakter. (Hantal)
 - **Alifba:** Be harfi = Sadece 1 temel Kod (بـ) ve 1 adet final varyasyon Kodu. (İkinci varyasyonu yoksa tek kod)
 
+*Aslında bugün teklif ettiğimiz bu usul, matbaanın dünyaya ilk yayıldığı zaman kullanılabilir ve Elifbe dijital çağa yıllar evvelinden girebilirdi. Ancak o devirde, dünyevi menfaatini ve sosyo-ekonomik gücünü korumak isteyen statükocu bir kesim yüzünden bu imkan kısıtlandı. Matbaayı getirenler ise hattatlık tekelinin etkisiyle, harflerin fıtri ve akıcı tabiatini katlederek onları sanki 4 ayrı parçaymış gibi hantal ve suni bir standarda mahkum ettiler. Keza çirkin ve okunaksız rika hattı, matbaanın geç gelmesiyle ortaya çıkmıştır. Bugün Unicode'un omuzlarında taşıdığı bu kambur, asırlar evvel üretilen o çıkarcı refleksin dijital dünyaya sızmış bir kalıntısıdır.*
+
 
 
 ### Keşide (ـ) Kullanımı
