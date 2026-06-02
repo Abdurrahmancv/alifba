@@ -114,6 +114,8 @@ Bu tabii fonetik esneklik sayesinde, bilgisayarın metin okuma (TTS) motorları,
 ### Ötrenin Harf Formu به كࢫردي ضمه\تࢫركجه اࢫتره
 
 **Okutucu Harf Çözümü:** Klasik imlada *ötre* (ö/ü) ve Kürtçedeki *zemme* (ue/ui) telaffuzunun netleşmesi için ötre harf ile ifade edilerek, Unicode standardındaki **"ࢫ"** harfi sisteme dahil edilmiştir. Mesela: **بࢫل** (böl), **بول** (bul).
+* Türkçe asıllı kelimelerde u sesini ayırmak için ötre kullanılabilir: **قࢫل** (kul), **قول** (kol).
+* Türkçe asıllı kelimelerde ö sesini ayırmak için vav kullanılabilir: **گࢫل** (gül), **گول** (göl).
 
 Ötrenin harf formunu kiraat talebeleri için ࢫ karakteriyle ifade ettik. Aşağıda bazı misaller verilmiştir:
 
@@ -156,9 +158,43 @@ Bu tabii fonetik esneklik sayesinde, bilgisayarın metin okuma (TTS) motorları,
 * Arapçadan gelen **قرآن**، **أول**، **أرض**، **ألبت**، **أما** kelimeleri, Kürtçede قُرعان، عَوِل، عَرد، هَلبَت، هَما gibi okunur.
 
 ### Harflerin Fonetik Aslı ve Evrensel Elifbe Birliği
-Yaygın ve hatalı bir inanışın aksine, elifbedeki harflerin büyük bir kısmı sadece Arap diline mahsus olmayıp, küresel ses alemine hitap etmektedir. Dil ilmi ve fonetik ekseninde tetkik edildiğinde, hakiki manada münhasıran Arapçaya ait sayılabilecek harfler sadece Dad **ض** ve kendine has gırtlaksı yapısıyla Ayn **ع** harfleridir. Bu iki harfin dışındaki Hı **خ**, Peltek Se **ث** veya Ha **ح** gibi sesler, aslında Latin, Cermen, Slav ve Kafkas dilleri gibi Arapça ile hiçbir akrabalığı bulunmayan dillerde yapısal olarak mevcuttur. 
+Yaygın ve hatalı bir inanışın aksine, elifbedeki harflerin büyük bir kısmı sadece Arap diline mahsus olmayıp, küresel ses alemine hitap etmektedir. Dil ilmi ve fonetik ekseninde tedkik edildiğinde, hakiki manada münhasıran Arapçaya ait sayılabilecek harfler sadece Dad **ض** ve kendine has gırtlaksı yapısıyla Ayn **ع** harfleridir. Bu iki harf yine de bazı dillerde ses olarak mevcuttur. İkisi haricindeki diğer Hı **خ**, Peltek Se **ث** veya Ha **ح** gibi sesler, aslında Latin, Cermen, Slav ve Kafkas dilleri gibi Arapça ile hiçbir akrabalığı bulunmayan dillerde yapısal olarak mevcuttur. 
 
 Nitekim Batı elifbelerinin temelindeki "H" harfi, tarihi ve etimolojik olarak Ha **ح** harfiyle aynı Fenike (Het) karaktere dayanmaktadır. Bu evrensel bağlar göz önünde bulunduğunda, elifbeyi belli bir coğrafyaya hapsetmek yerine, seslerin küresel ortaklığını esnek ve akil bir imla nizamı elzemdir.
+
+* Rumi dillerden gelen kelimeler bu standarda göre imla edilmelidir:
+
+| Rumi | Arabi |
+| --- | --- |
+| A | ا |
+| B | ب (bazan ڤ) |
+| C | خ (bazan ق\ك) |
+| Ç | چ (bazan س\ش) |
+| D | د |
+| E | ه (bazan ا\ى\ع) |
+| F | ف |
+| G | ج\غ\گ |
+| GH | غ |
+| H | ح\ه |
+| I | ى\ي |
+| J | ژ\ي |
+| K | ك |
+| L | ل |
+| M | م |
+| N | ن |
+| NG | ڭ\ڠ (bazan نج\نغ\نگ)
+| O | و (bazan ع) |
+| P | پ (bazan ف) |
+| Q | ق |
+| R | ر |
+| S | س (bazan ص\ش) |
+| T | ت (bazan ث\ذ\ط\ظ) |
+| U | ࢫ |
+| V | ڤ |
+| W | و |
+| X | كس (bazen خ\ش) |
+| Y | ي |
+| Z | ز (bazan ص) |
 
 ---
 ## 5. DİJİTAL MÜHENDİSLİK: KLAVYE TUŞ DÜZENİ
