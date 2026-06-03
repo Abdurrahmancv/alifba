@@ -16,8 +16,8 @@ Dünyadaki halklar kendi dillerinin özgün seslerini koruyarak, dijital dünyad
 
 Bu evrensel nizamda nihai hedefimiz, tüm dilleri bu ortak elifbe çatısı altında birleştirmektir. Bu noktada akla şu sual gelebilir: *"Neden Çin, Japon, Hind yazıları veya Yunan, Latin, Kiril alfabeleri değil de Arap harfleri?"*
 
-1. **Mukkaddes Sebep:** Arapça, bilhassa Fushâ (Fasih Arapça), vahy-i ilahinin nazil olduğu Kur'an dilidir. Her bir İslam neferinin zihnen, ruhen ve ilmen hakim olması gereken, İslam alemini manen birbirine bağlayan yegane ortak bağdır.
-2. **Teknik Sebep:** Doğu Asya (Çin, Japon vb.) yazı sistemleri ideografik/kendine mahsus olup öğrenmesi, dijitalleştirilmesi ve yazması son derece zordur. Arap elifbesi ise yeryüzündeki tüm alfabelerin ortak atası kabul edilen Fenike harflerine morfolojik olarak en sadık kalan, karakter yapısı itibarıyla en yaygın, akışkan ve pratik geometrik forma sahip yazı sistemidir.
+* **Mukkaddes Sebep:** Arapça, bilhassa Fushâ (Fasih Arapça), vahy-i ilahinin nazil olduğu Kur'an dilidir. Her bir İslam neferinin zihnen, ruhen ve ilmen hakim olması gereken, İslam alemini manen birbirine bağlayan yegane ortak bağdır.
+* **Teknik Sebep:** Doğu Asya (Çin, Japon vb.) yazı sistemleri kendine mahsus olup öğrenmesi, dijitalleştirilmesi ve yazması zordur. Arap elifbesi ise yeryüzündeki tüm alfabelerin ortak atası kabul edilen Fenike harflerine morfolojik olarak en sadık kalan, karakter yapısı itibarıyla en yaygın, akışkan ve pratik geometrik forma sahip yazı sistemidir.
 
 Bu yönüyle Elifbe, insanlığın ortak yazı mirasını uzun vadede taşımak adına en makul "orta yol" prensipidir.
 
@@ -83,41 +83,52 @@ Bu sistemde harf formları için işlemciye hiçbir hesaplama yaptırılmaz; haf
 
 
 
-### Türkçede Harekelerin Ses Değeri
-
-Türkçedeki ses geçişleri (ünlü uyumlarını) ek bir karaktere ihtiyaç duymadan, harfin kendi tabiatıyla (kalınlık-incelik mevzuuyla) tabii olarak çözmesidir. Temel harekelerin asli ses karşılıkları şöyledir:
-
-* **Ötre (ـُ):** Asli olarak **ö/ü** sesini verir. Kelimede kalın bir harf (Sad, Kaf, Tı vb.) veya uzun elif/vav bulunması durumunda, kalınlaşarak kısa **o/u** sesine dönüşür.
-* **Üstün (ـَ):** Asli olarak **e** sesini (Azerbaycan Türkçesindeki açık *ə* sesi gibi) verir. Kelimede kalın harf veya uzatıcı unsur varsa kısa **a** sesine dönüşür.
-* **Kesre (ـِ):** Asli olarak kısa **i** sesini verir. Kalın harflerin refakatinde ise kısa **ı** sesine dönüşür.
-
-Bu kaidenin netleşmesi için bazı emsal aşağıda ifade edilmiştir:
 
 
-| Hareke | İnce Okunuş | Kalın Okunuş | Kalınlaşma Sebebi |
+### Okutucu Unsurlar
+
+* Elif `ا` harfi Türkçede "a" sesi verir. Kürtçede (Elif) aynı sesi verir.
+* Ye `ی` harfi Türkçede "ê/î" sesi verir. Kürtçede (Yê) aynı sesi verir.
+* Vav `و` harfi Türkçede "o/u" sesi verir, ancak bazan "v" sesi için de kullanılmıştır. Kürtçede (Waw) "ô/û" sesini verir.
+
+*Türkçede ince harf bulunan kelimelerde Elif uzun "e", Vav uzun "ö/ü" gibi, kalın harf bulunan kelimelerde Ye uzun "a/ı" gibi okunur.*
+
+Kaidenin netleşmesi için bazı emsal aşağıda ifade edilmiştir:
+
+| Harf | Normal Okunuş | Yumuşak Okunuş | Yumuşama Sebebi |
+| --- | --- | --- | --- |
+| **Elif ğa (ا)** | **طاش** (Taş) | **سَكسان** (Seksen) | İnce Kâf (ك) |
+| **Ye ğe/yi (ی)** | **گیجه** (Gece) <br> **فیل** (Fil) | **مُصطَفی** (Mustafa) <br> **صاری** (Sarı) | Kalın Sad (ص) <br> Kalın Kaf (ق) |
+| **Vav wo/wu (و)** | **توپراق** (Toprak) <br> **موز** (Muz) | **كوشه** (Kôşe) <br> **حكومت** (Hükûmet) | İnce Kâf (ك) |
+
+### Harekeler
+Türkçedeki ses geçişleri (okutucu uyumlarını) ek bir karaktere ihtiyaç duymadan, harfin kendi tabiatıyla (kalınlık-incelik mevzuuyla) tabii olarak çözmesidir. Temel harekelerin asli ses karşılıkları şöyledir:
+
+* Üstün `ـَ` harekesi Türkçede "e" sesini (Azerbaycandaki açık *ə* gibi) verir. Kürtçede (Fethe) aynı sesi verir.
+* Esre `ـِ` harekesi Türkçede "i" sesini verir. Kürtçede (Kesre) aynı sesi verir.
+* Ötre `ـُ` harekesi Türkçede "ö/ü" sesi verir, ancak tanzimat devrinde, Türkçe asıllı kelimelerde ötre yerine vav kullanılmıştır. Kürtçede (Zemme) "ue/ui" sesini verir.
+
+*Türkçede kalın harf veya uzatma harfi (Elif/Vav) bulunan kelimelerde Üstün kısa "a", Esre kısa "ı", Ötre kısa "o/u" gibi okunur.*
+
+| Hareke | Normal Okunuş | Yumuşak Okunuş | Kalınlaşma Sebebi |
 | :--- | :--- | :--- | :--- |
-| **Ötre (ـُ)** | **شُهرت** (Şöhret) <br> **مُهم** (Mühim) | **عُثمان** (Osman) <br> **عُنصُر** (Unsur) | Uzun Elif (ا) etkisi <br> Sad (ص) gibi kalın harf etkisi |
-| **Üstün (َ)** | **شَهر** (Şehir) | **یَهودی** (Yahudi) | Uzun Vav (و) etkisi |
-| **Kesre (ِ)** | **بِر** (Bir) | **قِزِل** (Kızıl) | Kaf (ق) gibi kalın harf etkisi |
+| **Üstün ğe (ـَ)** | **سَحَر** (Seher) | **یَهودی** (Yehudi) | Uzun Vav (و) |
+| **Kesre ğı/ği (ـِ)** | **بِر** (Bir) | **قِزِل** (Kizil) | Kalın Kaf (ق) |
+| **Ötre wö/wü (ـُ)** | **عُرف** (Örf) <br> **حُكم** (Hükm) | **عُثمان** (Ösman) <br> **عُنصُر** (Ünsür) | Uzun Elif (ا) <br> Kalın Sad (ص) |
 
-Bu tabii fonetik esneklik sayesinde, bilgisayarın metin okuma (TTS) motorları, harfin kalınlık-incelik sınıfına bakarak harekenin ses değerini yapay zekaya ihtiyaç duymadan, saf matematiksel bir algoritmayla doğru telaffuz edebilir.
+Bu tabii fonetik esneklik sayesinde, bilgisayarın metin okuma (TTS) motorları, harfin kalınlık-incelik sınıfına bakarak harekenin ses değerini yapay zekaya ihtiyaç duymadan, saf matematikal bir algoritmayla doğru telaffuz edebilir.
+
+*Harekelerin kalınlaşması veya okutucu harflerin incelmesi bir kaide değildir, kiraatin tabii akışının neticesidir.*
 
 
 
-### Vav ve Ötrenin Kullanımı
+### Ötrenin Harf Formu به كࢫردي ضمه \ تࢫركجه اࢫتره
 
-* Türkçe Vav `و` harfinin asli sesi "o/u" olup, Klasik Türkçede bu harf "v" için de kullanılmıştır. Mutlak ince bir harfe temas etse dahi Vav'ın aslı kalındır.
-* Ötre `ـُ` okutucusunun asli sesi "ö/ü" olup, Klasik Türkçe'de aynen ifade edilmiştir. Mutlak kalın bir harfe temas etse bile Ötre'nin aslı incedir. *Tanzimat devrinde, ötre içeren bütün Türkçe asıllı kelimelerde ötre yerine vav kullanılmıştır.*
-* Kürtçe Waw `و` harfinin asli sesi "ô/û" olup, Klasik Kürtçede aynen ifade edilmiştir.
-* Zemme `ـُ` okutucusunun asli sesi "ue/ui" olup, Klasik Kürtçe'de aynen ifade edilmiştir.
+**Okutucu Harf Çözümü:** Klasik imlada *ötre* telaffuzu, kiraat talebeleri için harf ile ifade edilerek Unicode standardındaki **"ࢫ"** karakteri sisteme dahil edilmiştir. Mesela: **بࢫل** (böl), **بول** (bul).
+* Kalın okutuculu Türkçe asıllı kelimelerde u sesini ayırmak için ötre kullanılabilir: **قࢫل** (kul), **قول** (kol).
+* İnce okutuculu Türkçe asıllı kelimelerde ö sesini ayırmak için vav kullanılabilir: **گࢫل** (gül), **گول** (göl).
 
-### Ötrenin Harf Formu به كࢫردي ضمه\تࢫركجه اࢫتره
-
-**Okutucu Harf Çözümü:** Klasik imlada *ötre* (ö/ü) ve Kürtçedeki *zemme* (ue/ui) telaffuzunun netleşmesi için ötre harf ile ifade edilerek, Unicode standardındaki **"ࢫ"** harfi sisteme dahil edilmiştir. Mesela: **بࢫل** (böl), **بول** (bul).
-* Türkçe asıllı kelimelerde u sesini ayırmak için ötre kullanılabilir: **قࢫل** (kul), **قول** (kol).
-* Türkçe asıllı kelimelerde ö sesini ayırmak için vav kullanılabilir: **گࢫل** (gül), **گول** (göl).
-
-Ötrenin harf formunu kiraat talebeleri için ࢫ karakteriyle ifade ettik. Aşağıda bazı misaller verilmiştir:
+Aşağıda bazı misaller verilmiştir:
 
 **Türkçe Misaller:**
 
@@ -181,8 +192,7 @@ Nitekim Batı elifbelerinin temelindeki "H" harfi, tarihi ve etimolojik olarak H
 | K | ك |
 | L | ل |
 | M | م |
-| N | ن |
-| NG | ڭ\ڠ (bazan نج\نغ\نگ)
+| N | ن (bazan ڭ\ڠ)
 | O | و (bazan ع) |
 | P | پ (bazan ف) |
 | Q | ق |
@@ -194,7 +204,7 @@ Nitekim Batı elifbelerinin temelindeki "H" harfi, tarihi ve etimolojik olarak H
 | W | و |
 | X | كس (bazen خ\ش) |
 | Y | ي |
-| Z | ز (bazan ص) |
+| Z | ز (bazan ص\ژ) |
 
 ---
 ## 5. DİJİTAL MÜHENDİSLİK: KLAVYE TUŞ DÜZENİ
