@@ -9,14 +9,14 @@
 
 Bu proje, küresel savaşların ve politik kutuplaşmaların anlamsızlığına inanan; insanlığın dürüstlük, samimiyet ve iyi niyetle ortak bir ilmi zeminde buluşmasını hedefleyen evrensel bir medeniyet hareketidir. Bizi birleştiren en güçlü unsur İslam medeniyetidir.
 
-Dünyadaki halklar kendi dillerine mahsus seslerini koruyarak, dijital dünyada ortak bir elifbe çatısı altında birleşebilirler. Bu sistem, dilleri aslına sadık kalarak, kıraati kolaylaştıran bir "orta yol" çözümüdür.
+Dünyadaki halklar kendi dillerine mahsus seslerini koruyarak, dijital dünyada ortak bir elifbe çatısı altında birleşebilirler. Bu sistem, dillerin aslına sadık kalarak, kıraati kolaylaştıran bir "orta yol" çözümüdür.
 
 ### Neden Elifbe?
 
 Bu evrensel nizamda nihai hedefimiz, tüm dilleri bu ortak elifbe çatısı altında birleştirmektir. Bu noktada akla şu sual gelebilir: "Neden Çin, Japon, Hind yazıları veya Yunan, Latin, Kiril alfabeleri değil de Arap harfleri?"
 
 * **Mukkaddes Sebep:** Arapça, bilhassa Fushâ, vahy-i ilahinin nazil olduğu Kur'an dilidir. Her bir İslam neferinin zihnen, ruhen ve ilmen hakim olması gereken, İslam alemini manen birbirine bağlayan yegane ortak bağdır. Kur'an-ı Kerim bu hatla temsil edilmiştir.
-* **Teknik Sebep:** Doğu Asya (Çin, Japon vb.) yazı sistemleri kendine mahsus gelişmiştir. Arap elifbesi ise dünyadaki tüm alfabelerin atası kabul edilen Fenike harflerine morfolojik olarak en sadık kalan, karakter yapısıyla en yaygın, pratik ve geometrik forma sahip yazı sistemidir.
+* **Teknik Sebep:** Doğu Asya (Çin, Japon vb.) yazı sistemleri kendine mahsus gelişmiştir. Arap elifbesi ise dünyadaki tüm alfabelerin atası kabul edilen Fenike harflerine en sadık kalan, karakter yapısıyla en yaygın, pratik ve geometrik forma sahip yazı sistemidir.
 
 Bu yönüyle Elifbe, insanlığın ortak yazı mirasını uzun vadede taşımak adına en makul "orta yol" prensipidir.
 
@@ -26,7 +26,7 @@ Bu yönüyle Elifbe, insanlığın ortak yazı mirasını uzun vadede taşımak 
 Unicode standartlarında, Elifbe tabanlı diller (Türkçe, Kürtçe, Farsça, Urduca, Arapça..) ekrana basılırken hantal bir yapı kullanılır:
 
 - **0x06 Sırası (Standard Kodlar):** Harflerin sadece ham karakter değerini tutar.
-- **Presentation Forms (Sunum Biçimleri / 0xFB50 - 0xFEFF Sırası):** Bilgisayarın font motoru harfin başta, ortada, sonda veya yalın olduğunu hesaplaması için yüzlerce gereksiz alan işgal eder.
+- **Presentation Forms (Sunum Biçimleri / 0xFB50 - 0xFEFF Sırası):** Harfin başta, ortada, sonda veya yalın olduğunu hesaplaması için yüzlerce gereksiz alan işgal eder.
 
 Bu durum veritabanlarında yer kaplar ve OpenType mimarları için hantal yazılım algoritmaları doğurur. Son yüzyılda süregelen "Arap harflerinde 4 farklı yazılış formu vardır, öğrenmesi zordur" iddiası bir yanılgıdan ibarettir.
 
@@ -36,10 +36,10 @@ Bu durum veritabanlarında yer kaplar ve OpenType mimarları için hantal yazıl
 
 Tavsiye ettiğimiz bu nizam ile, bilgisayarların Elifbe harflerinin işleme mantığını sadeleştirerek, elifbenin matematikal bir tasarrufa sahip olduğunu isbatlıyoruz.
 
-* **Uzanan Harfler (Baştaki Form + Yalın Form):** Özünde tek bir şekli vardır; o da kendinden sonraki harfe akmaya hazır olan bağlantılı (baştaki) formdur. Sadece kelime sonlarında estetik olarak nihayete erdirilirler.
+* **Uzanan Harfler (Baştaki Form + Yalın Form):** Özünde tek bir şekli vardır, o da kendinden sonraki harfe akmaya hazır olan bağlantılı (baştaki) formdur. Sadece kelime sonlarında estetik olarak nihayete erdirilirler.
 * **Uzanmayan Harfler (Tek Yalın Form):** Elif (ا), Dal (د), Zâl (ذ), Re (ر), Ze (ز), Je (ژ), Vav (و) gibi harfler kendinden sonrakiyle zaten birleşmez, sadece arkasındaki harf onlara bağlanabilir. Kelimenin neresinde olurlarsa olsunlar, hiçbir morfolojik varyasyona ihtiyaç duymadan tamamen tek bir kodla temsil edilebilirler.
 
-* Harflerin üst üste binmesi veya iç içe geçmesi imla kaidesi değil, rahat yazılması için vazedilen estetik bir hat kaidesidir. Arap harfleri özünde birer lego gibi uç uca eklenerek yazılır.
+* Harflerin üst üste binmesi veya iç içe geçmesi bir imla kaidesi değil, rahat yazılması için vazedilen estetik bir imla hattıdır. Arap harfleri özünde birer lego gibi uç uca eklenerek (Kûfî) yazılır.
 
 *Harflerde 4 form yoktur, elifbede mesele sadece harfin kendinden sonraki harfe bağlanıp bağlanmamasıdır.*
 
@@ -47,7 +47,7 @@ Tavsiye ettiğimiz bu nizam ile, bilgisayarların Elifbe harflerinin işleme man
 
 Harfler yer aldığı **0x06** Unicode tablosunda, doğrudan bağlantılı formuyla **(Mesela: بـ)** tutulmalıdır. Yalın hali ayriyeten bulunan harflere sadece bir kod yeri daha ayrılır **(Mesela: ب)**. Bu sayede, klavyede yazı yazarken arka planda kompleks AI veya font işleme otomasyonları çalışmaz. İmla mantığı şu standarda tabidir:
 
-* Kullanıcı klavyede bir harfe bastığı an, ekranda beliren glif doğrudan kendinden sonrakiyle birleşmeye hazır olan tek asli formdur (بـ). Karakterler yazıldıkça tabii olarak birbirinin elini tutar.
+* Kullanıcı klavyede bir harfe bastığı an, ekranda beliren glif doğrudan kendinden sonrakiyle birleşmeye hazır olan tek asli formdur (بـ). Harfler ilave edildikçe tabii olarak birbirinin elini tutar.
 
 * Kullanıcı bağlantılı bir harfi yalın bırakmak isterse; süslü biten harflerin (ج, ح, خ, س, ش, ص, ض, ع, غ, ق, ن, ه, ي gibi) bu varyasyonlarına standart klavye usulündeki gibi Shift tuşu kombinasyonuyla ulaşabilir.
 
@@ -197,7 +197,7 @@ Nitekim Batı elifbelerinin temelindeki "H" harfi, tarihi ve etimolojik olarak H
 | U | ࢫ |
 | V | ڤ |
 | W | و |
-| X | كس (bazen خ\ش) |
+| X | كس (bazan خ\ش) |
 | Y | ي |
 | Z | ز (bazan ص\ژ) |
 
