@@ -5,84 +5,81 @@
 **E-posta:** abdurrahmancevik2005@gmail.com
 
 ---
-
 ## 1. VİZYONUMUZ: "Adem'in Oğulları İlmi Zeminde Buluşmalı"
 
 Bu proje, küresel savaşların ve politik kutuplaşmaların anlamsızlığına inanan; insanlığın dürüstlük, samimiyet ve iyi niyetle ortak bir ilmi zeminde buluşmasını hedefleyen evrensel bir medeniyet hareketidir. Bizi birleştiren en güçlü unsur İslam medeniyetidir.
 
-Dünyadaki halklar kendi dillerinin özgün seslerini koruyarak, dijital dünyada ortak bir elifbe çatısı altında birleşebilirler. Bu sistem, dilleri aslına sadık kalarak, kıraati kolaylaştıran bir "orta yol" çözümüdür.
+Dünyadaki halklar kendi dillerine mahsus seslerini koruyarak, dijital dünyada ortak bir elifbe çatısı altında birleşebilirler. Bu sistem, dilleri aslına sadık kalarak, kıraati kolaylaştıran bir "orta yol" çözümüdür.
 
 ### Neden Elifbe?
 
-Bu evrensel nizamda nihai hedefimiz, tüm dilleri bu ortak elifbe çatısı altında birleştirmektir. Bu noktada akla şu sual gelebilir: *"Neden Çin, Japon, Hind yazıları veya Yunan, Latin, Kiril alfabeleri değil de Arap harfleri?"*
+Bu evrensel nizamda nihai hedefimiz, tüm dilleri bu ortak elifbe çatısı altında birleştirmektir. Bu noktada akla şu sual gelebilir: "Neden Çin, Japon, Hind yazıları veya Yunan, Latin, Kiril alfabeleri değil de Arap harfleri?"
 
-* **Mukkaddes Sebep:** Arapça, bilhassa Fushâ (Fasih Arapça), vahy-i ilahinin nazil olduğu Kur'an dilidir. Her bir İslam neferinin zihnen, ruhen ve ilmen hakim olması gereken, İslam alemini manen birbirine bağlayan yegane ortak bağdır.
-* **Teknik Sebep:** Doğu Asya (Çin, Japon vb.) yazı sistemleri kendine mahsus olup öğrenmesi, dijitalleştirilmesi ve yazması zordur. Arap elifbesi ise yeryüzündeki tüm alfabelerin ortak atası kabul edilen Fenike harflerine morfolojik olarak en sadık kalan, karakter yapısı itibarıyla en yaygın, akışkan ve pratik geometrik forma sahip yazı sistemidir.
+* **Mukkaddes Sebep:** Arapça, bilhassa Fushâ, vahy-i ilahinin nazil olduğu Kur'an dilidir. Her bir İslam neferinin zihnen, ruhen ve ilmen hakim olması gereken, İslam alemini manen birbirine bağlayan yegane ortak bağdır. Kur'an-ı Kerim bu hatla temsil edilmiştir.
+* **Teknik Sebep:** Doğu Asya (Çin, Japon vb.) yazı sistemleri kendine mahsus gelişmiştir. Arap elifbesi ise dünyadaki tüm alfabelerin atası kabul edilen Fenike harflerine morfolojik olarak en sadık kalan, karakter yapısıyla en yaygın, pratik ve geometrik forma sahip yazı sistemidir.
 
 Bu yönüyle Elifbe, insanlığın ortak yazı mirasını uzun vadede taşımak adına en makul "orta yol" prensipidir.
 
-
 ---
-## 2. MEVCUT SİSTEMİN ZAAFİYETİ: Unicode ve Data İsrafı
+## 2. MEVCUT SİSTEMİN ZAAFİYETİ VE MİMARİ ÇÖZÜM
 
-Unicode standartlarında, Elifbe tabanlı diller (Arapça, Farsça, Türkçe, Kürtçe, Urduca..) ekrana basılırken hantal bir yapı kullanılır:
+Unicode standartlarında, Elifbe tabanlı diller (Türkçe, Kürtçe, Farsça, Urduca, Arapça..) ekrana basılırken hantal bir yapı kullanılır:
 
-1. **0x06 Sırası (Standard Kodlar):** Harflerin sadece ham karakter değerini tutar.
-2. **Presentation Forms (Sunum Biçimleri / 0xFB50 - 0xFEFF Sırası):** Bilgisayarın font motoru harfin başta, ortada, sonda veya yalın olduğunu hesaplaması için yüzlerce gereksiz alan işgal eder.
+- **0x06 Sırası (Standard Kodlar):** Harflerin sadece ham karakter değerini tutar.
+- **Presentation Forms (Sunum Biçimleri / 0xFB50 - 0xFEFF Sırası):** Bilgisayarın font motoru harfin başta, ortada, sonda veya yalın olduğunu hesaplaması için yüzlerce gereksiz alan işgal eder.
 
-Bu durum veritabanlarında yer kaplar ve OpenType mimarları için hantal yazılım algoritmaları doğurur. Son yüzyılda süregelen "Arap harflerinde her harfin 4 farklı yazılış formu vardır, öğrenmesi zordur" iddiası bir yanılgıdan ibarettir.
+Bu durum veritabanlarında yer kaplar ve OpenType mimarları için hantal yazılım algoritmaları doğurur. Son yüzyılda süregelen "Arap harflerinde 4 farklı yazılış formu vardır, öğrenmesi zordur" iddiası bir yanılgıdan ibarettir.
 
-*Yazının estetik görünmesi için kullanılan diğer formlar (ortadaki, sondaki, alt alta gelen ve birbirinin içine geçen estetik harf ligatürleri) bu sırada yer alabilir. Tavsiyemizin tatbik edilmesiyle estetik formlar, mevcut ayrılan alandan çok daha az yer kaplar.*
 
----
-## 3. MİMARİ ÇÖZÜM: Harflerde En Fazla 2 Form Vardır
 
-Tavsiye ettiğimiz bu ortografik nizam ile, bilgisayarların font işleme mantığını kökten sadeleştirerek, elifbenin matematikal bir tasarrufa sahip olduğunu isbatlıyoruz.
+### Harflerde En Fazla 2 Form Vardır
 
-Mevcut Unicode "Sunum Biçimleri" (Presentation Forms) cetvellerindeki hantallık tamamen tasfiye edilmelidir. Bizim sistemimizde her harf veri tabanında tek bir temel biçim (glif) olarak yer alır. Sadece bazı harflerin kelime sonunda bir "yalın/bitiş" varyasyonu bulunur:
+Tavsiye ettiğimiz bu nizam ile, bilgisayarların Elifbe harflerinin işleme mantığını sadeleştirerek, elifbenin matematikal bir tasarrufa sahip olduğunu isbatlıyoruz.
 
-* **Bağlantılı Harfler (Tek Form + Süslü Varyasyon):** Özünde tek bir şekli vardır; o da kendinden sonraki harfe akmaya hazır olan bağlantılı (baştaki) formdur. Sadece kelime sonlarında estetik olarak nihayete erdirilirler (süslenirler).
-* **Bağlantısız Harfler (Tamamen Tek Form):** Elif (ا), Dal (د), Zel (ذ), Ra (ر), Ze (ز), Je (ژ), Vav (و) gibi harfler kendinden sonrakiyle zaten birleşmezler. Kelimenin neresinde olurlarsa olsunlar, hiçbir morfolojik varyasyona (süse) ihtiyaç duymadan tamamen tek bir formla temsil edilirler. Sadece arkasındaki harf onlara bağlanabilir.
+* **Uzanan Harfler (Baştaki Form + Yalın Form):** Özünde tek bir şekli vardır; o da kendinden sonraki harfe akmaya hazır olan bağlantılı (baştaki) formdur. Sadece kelime sonlarında estetik olarak nihayete erdirilirler.
+* **Uzanmayan Harfler (Tek Yalın Form):** Elif (ا), Dal (د), Zâl (ذ), Re (ر), Ze (ز), Je (ژ), Vav (و) gibi harfler kendinden sonrakiyle zaten birleşmez, sadece arkasındaki harf onlara bağlanabilir. Kelimenin neresinde olurlarsa olsunlar, hiçbir morfolojik varyasyona ihtiyaç duymadan tamamen tek bir kodla temsil edilebilirler.
+
+* Harflerin üst üste binmesi veya iç içe geçmesi imla kaidesi değil, rahat yazılması için vazedilen estetik bir hat kaidesidir. Arap harfleri özünde birer lego gibi uç uca eklenerek yazılır.
 
 *Harflerde 4 form yoktur, elifbede mesele sadece harfin kendinden sonraki harfe bağlanıp bağlanmamasıdır.*
 
-Unicode cetvelindeki tüm "Arapça Sunum Biçimleri" (Presentation Forms) reform edilmeli, harfler **baştaki form** ve **yalın form** olmak üzere sadece 2 Unicode karaktere indirilmelidir.
-
-### Unicode Cetveli (Bağlantılı/Bağlantısız Formlar)
+### Unicode Cetveli
 
 Harfler yer aldığı **0x06** Unicode tablosunda, doğrudan bağlantılı formuyla **(Mesela: بـ)** tutulmalıdır. Yalın hali ayriyeten bulunan harflere sadece bir kod yeri daha ayrılır **(Mesela: ب)**. Bu sayede, klavyede yazı yazarken arka planda kompleks AI veya font işleme otomasyonları çalışmaz. İmla mantığı şu standarda tabidir:
 
 * Kullanıcı klavyede bir harfe bastığı an, ekranda beliren glif doğrudan kendinden sonrakiyle birleşmeye hazır olan tek asli formdur (بـ). Karakterler yazıldıkça tabii olarak birbirinin elini tutar.
-* Tıpkı mobil klavyelerin cümle başlarında harfleri otomatik olarak büyük harfe dönüştürmesi gibi; kullanıcı bir kelimeyi bitirip boşluk (Space) tuşuna bastığında veya harf olmayan bir karakter girdiğinde, yazılım algoritması kelimenin son harfini (eğer bir yalın varyasyonu varsa) otomatik olarak süslü/yalın formuna dönüştürür *(Optional Capitalization)*.
-* Kullanıcı boşluk bıraktıktan sonra silme tuşuna (Backspace) bassa dahi, o harf yalın formunda kalır. Sırayla Lam ve Elif yazınca lamelif olur ve bu sayede silince tek seferde silinir. İkinci hali olmayıp birleşen harften hemen sonra virgül eklediğimizde harf sondaki halini alır, ve sildiğimizde harf tek bir karaktere dönüştüğü için tek seferde silinir.
-* Kullanıcı otomatik boşluk fonksiyonunu beklemek istemezse veya bir kısaltma/istisna yazıyorsa; kuyruklu ve süslü biten harflerin (ج, ح, خ, س, ش, ص, ض, ع, غ, ق, ن, ه, ي gibi) bu varyasyonlarına standart klavye usulündeki gibi Shift tuşu kombinasyonuyla doğrudan da ulaşabilir.
+
+* Kullanıcı bağlantılı bir harfi yalın bırakmak isterse; süslü biten harflerin (ج, ح, خ, س, ش, ص, ض, ع, غ, ق, ن, ه, ي gibi) bu varyasyonlarına standart klavye usulündeki gibi Shift tuşu kombinasyonuyla ulaşabilir.
+
+**Mevcut Unicode:** 5 farklı kod / 4 farklı karakter.  
+**Olması Gereken:** Sadece 1 temel kod (بـ) ve 1 adet final varyasyon kodu. (İkinci varyasyonu yoksa tek kod)
+
+*Yazının estetik görünmesi için kullanılan diğer formlar (alt alta gelen ve birbirinin içine geçen estetik harf ligatürleri), "Presentation Forms" sırasında yer alabilir. Bu usulün tatbik edilmesiyle estetik formlar, mevcut ayrılan alandan çok daha az yer kaplar.*
+
+### Dijital Estetik ve Mobil Desteği
+
+* Tıpkı mobil klavyelerin cümle başlarında harfleri otomatik olarak büyük harfe dönüştürmesi gibi *(Optional Capitalization)*; kullanıcı uzanan bir harf girip boşluk (Space) tuşuna veya harf olmayan bir karaktere bastığında, yazılım algoritması o harfi otomatiken yalın formuna dönüştürür. Kullanıcı sonra o karakteri silse dahi, o harf yalın formunda kalır.
+
+* Unicode cetvelindeki Tatweel (ـ) karakteri yerine klavyedeki standart nokta (.) yahut alt çizgi (_) kullanılabilir. Alt çizgi yahut nokta, birleşmeye hazır harflerin arasında bulunduğunda, zaten keşide görüntüsüne tabii olarak kavuşacaktır.
 
 * Kendinden sonraki harfle birleşen diğer `ب`, `ت`, `ث`, `ط`, `ظ`, `ف`, `ك`, `ل` gibi harflerin hemen ucuna halihazırda klavyede var olan Arapça virgül **(،)** işareti geldiğinde, harf zaten kendi yalın görüntüsüne tabii olarak kavuşacaktır. **(Mesela: `بـ` + `،` = `ب`)**
 
-### Geleneksel Unicode Mantığı vs. Alifba Mantığı
-- **Mevcut Unicode:** Be harfi = 5 farklı kod / 4 farklı karakter. (Hantal)
-- **Alifba:** Be harfi = Sadece 1 temel Kod (بـ) ve 1 adet final varyasyon Kodu. (İkinci varyasyonu yoksa tek kod)
+* Sırayla Lam ve Elif yazınca Lamelif olur ve bu sayede silince tek seferde silinir. İkinci hali olmayıp birleşen harften hemen sonra virgül eklediğimizde harf sondaki halini alır, ve sildiğimizde harf tek bir karaktere dönüştüğü için tek seferde silinir.
 
-*Aslında bugün teklif ettiğimiz bu usul, matbaanın dünyaya ilk yayıldığı zaman kullanılabilir ve Elifbe dijital çağa yıllar evvelinden girebilirdi. Ancak o devirde, dünyevi menfaatini ve sosyo-ekonomik gücünü korumak isteyen statükocu bir kesim yüzünden bu imkan kısıtlandı. Matbaayı getirenler ise hattatlık tekelinin etkisiyle, harflerin fıtri ve akıcı tabiatini katlederek onları sanki 4 ayrı parçaymış gibi hantal ve suni bir standarda mahkum ettiler. Keza çirkin ve okunaksız rika hattı, matbaanın geç gelmesiyle ortaya çıkmıştır. Bugün Unicode'un omuzlarında taşıdığı bu kambur, asırlar evvel üretilen o çıkarcı refleksin dijital dünyaya sızmış bir kalıntısıdır.*
+### Matbaa Devri Kabil-i Tatbik
+Bugün teklif ettiğimiz bu usul, matbaanın dünyaya ilk yayıldığı zaman kullanılabilir ve Elifbe dijital çağa yıllar evvelinden girebilirdi.
 
+* Bu usul matbaa devrinde tatbik edilseydi, kurşun kalıplar iki geometrik standarda indirgenirdi: Hem sağ hem sol kenara sıfırlanmış Uzayan Form (baş ve orta form için tek kalıp) ve sadece sağ kenara sıfırlanıp sol ucu harfin kendi estetik Yalın Formu (son ve yalın form için tek kalıp). Böylece kalıplar birbirini ezmeden, puzzle gibi uç uca birleşebilir.
 
+* Ancak o devirde, dünyevi menfaatini ve sosyo-ekonomik gücünü korumak isteyen statükocu bir kesim yüzünden imkan kısıtlandı. Matbaayı getirenler ise hattatlık tekelinin etkisiyle, harflerin fıtri ve akıcı tabiatini katlederek onları sanki 4 ayrı parçaymış gibi hantal ve suni bir standarda mahkum etti. Keza çirkin ve okunaksız rika hattı, matbaanın geç gelmesinden mütevellit ortaya çıkmıştır. Bugün Unicode'un lüzumsuz yer tuttuğu bu kambur, asırlar evvel üretilen o çıkarcı refleksin dijital dünyaya sızmış bir kalıntısıdır.
 
-### Keşide (ـ) Kullanımı
+*İlk Türkçe Daktilonun (1913) imal edilmesiyle bu vetire hızlanabilirdi. Ancak bu daktilonun on yıl sonra (1924) topraklarımıza ulaşması ve hemen ardından yapılan yapılan siyasi tahrifat sebebiyle hayata geçirilememiş; Harflerimiz, 150 yıllık hantal bir standarda sıkışmıştır.*
 
-Unicode cetvelinde yer kaplayan Tatweel (ـ) karakteri tamamen sistemden kaldırılmalıdır.
-
-* Bunun yerine klavyedeki standart nokta (.) kullanılacaktır. Nokta, birleşmeye hazır harflerin arasında bulunduğunda, zaten keşide görüntüsüne tabii olarak kavuşacaktır.
-
-
-Bu sistemde harf formları için işlemciye hiçbir hesaplama yaptırılmaz; hafızada sadece **Birleşen Kod** ve **Yalın Kod** olarak iki sabit değer saklanır, bazı harfler ise sadece **Yalın Koda** sahiptir. Harflerin ikinci formu font motorunun algoritmasıyla değil, harfin veri tabanındaki statik koduyla (default state) sağlanır.
 
 ---
-## 4. DİLLERİN SES İHTİYAÇLARINA GÖRE TASARRUF
+## 3. DİLLERİN SES İHTİYAÇLARINA GÖRE TASARRUF
 
 İslam coğrafyasındaki dillerin dijital imla karmaşasını çözen tasarruf hamleleri yapılmıştır.
-
-
-
 
 
 ### Okutucu Unsurlar
@@ -97,11 +94,12 @@ Kaidenin netleşmesi için bazı emsal aşağıda ifade edilmiştir:
 
 | Harf | Normal Okunuş | Yumuşak Okunuş | Yumuşama Sebebi |
 | --- | --- | --- | --- |
-| **Elif ğa (ا)** | **طاش** (Taş) | **سَكسان** (Seksen) | İnce Kâf (ك) |
-| **Ye ğe/yi (ی)** | **گیجه** (Gece) <br> **فیل** (Fil) | **مُصطَفی** (Mustafa) <br> **صاری** (Sarı) | Kalın Sad (ص) <br> Kalın Kaf (ق) |
-| **Vav wo/wu (و)** | **توپراق** (Toprak) <br> **موز** (Muz) | **كوشه** (Kôşe) <br> **حكومت** (Hükûmet) | İnce Kâf (ك) |
+| **Elif (ا)** | **طاش** (Taş) | **سَكسان** (Seksen) | İnce Kâf (ك) |
+| **Ye (ی)** | **گیجه** (Gece) <br> **فیل** (Fil) | **دَعوی** (Dava) <br> **صاری** (Sarı) | Elif Maksura (ى) <br> Kalın Kaf (ق) |
+| **Vav (و)** | **توپراق** (Toprak) <br> **موز** (Muz) | **كوشه** (Köşe) <br> **حكومت** (Hükümet) | İnce Kâf (ك) |
 
 ### Harekeler
+
 Türkçedeki ses geçişleri (okutucu uyumlarını) ek bir karaktere ihtiyaç duymadan, harfin kendi tabiatıyla (kalınlık-incelik mevzuuyla) tabii olarak çözmesidir. Temel harekelerin asli ses karşılıkları şöyledir:
 
 * Üstün `ـَ` harekesi Türkçede "e" sesini (Azerbaycandaki açık *ə* gibi) verir. Kürtçede (Fethe) aynı sesi verir.
@@ -112,9 +110,12 @@ Türkçedeki ses geçişleri (okutucu uyumlarını) ek bir karaktere ihtiyaç du
 
 | Hareke | Normal Okunuş | Yumuşak Okunuş | Kalınlaşma Sebebi |
 | :--- | :--- | :--- | :--- |
-| **Üstün ğe (ـَ)** | **سَحَر** (Seher) | **یَهودی** (Yehudi) | Uzun Vav (و) |
-| **Kesre ğı/ği (ـِ)** | **بِر** (Bir) | **قِزِل** (Kizil) | Kalın Kaf (ق) |
-| **Ötre wö/wü (ـُ)** | **عُرف** (Örf) <br> **حُكم** (Hükm) | **عُثمان** (Ösman) <br> **عُنصُر** (Ünsür) | Uzun Elif (ا) <br> Kalın Sad (ص) |
+| **Üstün (ـَ)** | **سَحَر** (Seher) | **یَهودی** (Yahudi) | Uzun Vav (و) |
+| **Kesre (ـِ)** | **بِر** (Bir) | **قِزِل** (Kızıl) | Kalın Kaf (ق) |
+| **Ötre (ـُ)** | **عُرف** (Örf) <br> **حُكم** (Hüküm) | **عُثمان** (Osman) <br> **عُنصُر** (Unsur) | Uzun Elif (ا) <br> Kalın Sad (ص) |
+
+* Kalın okutuculu Türkçe asıllı kelimelerde u sesini ayırmak için ötre kullanılabilir: **قُل** (kul), **قول** (kol).
+* İnce okutuculu Türkçe asıllı kelimelerde ö sesini ayırmak için vav kullanılabilir: **گُل** (gül), **گول** (göl).
 
 Bu tabii fonetik esneklik sayesinde, bilgisayarın metin okuma (TTS) motorları, harfin kalınlık-incelik sınıfına bakarak harekenin ses değerini yapay zekaya ihtiyaç duymadan, saf matematikal bir algoritmayla doğru telaffuz edebilir.
 
@@ -125,10 +126,6 @@ Bu tabii fonetik esneklik sayesinde, bilgisayarın metin okuma (TTS) motorları,
 ### Ötrenin Harf Formu به كࢫردي ضمه \ تࢫركجه اࢫتره
 
 **Okutucu Harf Çözümü:** Klasik imlada *ötre* telaffuzu, kiraat talebeleri için harf ile ifade edilerek Unicode standardındaki **"ࢫ"** karakteri sisteme dahil edilmiştir. Mesela: **بࢫل** (böl), **بول** (bul).
-* Kalın okutuculu Türkçe asıllı kelimelerde u sesini ayırmak için ötre kullanılabilir: **قࢫل** (kul), **قول** (kol).
-* İnce okutuculu Türkçe asıllı kelimelerde ö sesini ayırmak için vav kullanılabilir: **گࢫل** (gül), **گول** (göl).
-
-Aşağıda bazı misaller verilmiştir:
 
 **Türkçe Misaller:**
 
@@ -142,8 +139,8 @@ Aşağıda bazı misaller verilmiştir:
 
 ### Jeyn (ژ) Harfinin Tasfiyesi
 
-* Türkçenin yapısında Je (ژ) ünsüzü yoktur. Türkçede bu harfi barındırmak yerine, saf dudak-diş ünsüzü olan **"ڤ"** (V) harfi sabitlenmiştir. Klavye, Kürtçe gibi diller için ژ harfini barındırır. Jeyn harfi Kürtçe gibi İrani diller için zaruri olsa da, Türkçede bu ses ج ve bazan ز\ش harfleriyle ifade edilebilir. (Mesela: شارز\شارج "şarj", جاله "jale", جندارمه "jandarma") Lakin ڤ sesi, Türkçe için elzemdir.
-* Eski Türkçe بار (var), بیر (ver) ve بول (ol) kelimeleri, Oğuzcada و harfiyle ifade edilip, وار ve ویر ve وول şeklinde imla edilmiştir. Vav harfi Türkçenin asli harflerinden biridir ancak V sesini ifade etmek için yeterli değildir, bu yüzden bu kelimeler günümüz Türkçesinde ڤار ve ڤىر ve اول şeklinde imla edilebilir. Asli sesi "v" olan sesler için: تله‌ڤيزيون "televizyon", باغچڤان "bahçıvan". Asli sesi "û" olan sesler yine و ile yazılır: وادي "vadi", وطن "vatan".
+* Türkçenin yapısında Je (ژ) ünsüzü yoktur. Türkçede bu harfi barındırmak yerine, saf dudak-diş ünsüzü olan **"ڤ"** (V) harfi sabitlenmiştir. Jeyn harfi Kürtçe gibi İrani diller için zaruri olsa da, Türkçede bu ses ج ve bazan ز\ش harfleriyle ifade edilebilir. (Mesela: شارز\شارج "şarj", جاله "jale", جندارمه "jandarma") Lakin ڤ sesi, Türkçe için elzemdir.
+* Eski Türkçe بار (var), بیر (ver) ve بول (ol) kelimeleri, Oğuzcada و harfiyle ifade edilip, وار ve ویر ve وول şeklinde imla edilmiştir. Vav harfi Türkçenin asli harflerinden biridir ancak V sesini ifade etmek için yeterli değildir, bu yüzden bu kelimeler günümüz Türkçesinde ڤار ve ڤىر ve اول şeklinde imla edilebilir. Asli sesi "v" olan sesler için: تله‌ڤيزيون "televizyon", باغچڤان "bahçıvan". Asli sesi "w" olan sesler yine و ile yazılır: وادي "vadi", وطن "vatan".
 
 ### İmale Çözümü
 
@@ -169,9 +166,9 @@ Aşağıda bazı misaller verilmiştir:
 * Arapçadan gelen **قرآن**، **أول**، **أرض**، **ألبت**، **أما** kelimeleri, Kürtçede قُرعان، عَوِل، عَرد، هَلبَت، هَما gibi okunur.
 
 ### Harflerin Fonetik Aslı ve Evrensel Elifbe Birliği
-Yaygın ve hatalı bir inanışın aksine, elifbedeki harflerin büyük bir kısmı sadece Arap diline mahsus olmayıp, küresel ses alemine hitap etmektedir. Dil ilmi ve fonetik ekseninde tedkik edildiğinde, hakiki manada münhasıran Arapçaya ait sayılabilecek harfler sadece Dad **ض** ve kendine has gırtlaksı yapısıyla Ayn **ع** harfleridir. Bu iki harf yine de bazı dillerde ses olarak mevcuttur. İkisi haricindeki diğer Hı **خ**, Peltek Se **ث** veya Ha **ح** gibi sesler, aslında Latin, Cermen, Slav ve Kafkas dilleri gibi Arapça ile hiçbir akrabalığı bulunmayan dillerde yapısal olarak mevcuttur. 
+Yaygın ve hatalı bir inanışın aksine, elifbedeki harflerin büyük bir kısmı sadece Arap diline mahsus olmayıp, küresel ses alemine hitap etmektedir. Dil ilmi ve fonetik ekseninde tedkik edildiğinde, hakiki manada münhasıran Arapçaya ait sayılabilecek tek harf Dad **ض** harfidir. Yine de bu harfe bazı dillerde ses olarak tevafuk edilebilir. Arapçada bulunan diğer Hı **خ**, Peltek Se **ث** veya Ha **ح** gibi sesler, Latin, Cermen, Slav ve Kafkas dilleri gibi Arapça ile hiçbir akrabalığı bulunmayan dillerde yapısal olarak mevcuttur. 
 
-Nitekim Batı elifbelerinin temelindeki "H" harfi, tarihi ve etimolojik olarak Ha **ح** harfiyle aynı Fenike (Het) karaktere dayanmaktadır. Bu evrensel bağlar göz önünde bulunduğunda, elifbeyi belli bir coğrafyaya hapsetmek yerine, seslerin küresel ortaklığını esnek ve akil bir imla nizamı elzemdir.
+Nitekim Batı elifbelerinin temelindeki "H" harfi, tarihi ve etimolojik olarak Ha **ح** harfiyle aynı Fenike (Het) karaktere dayanmaktadır. Bu evrensel bağlar göz önünde bulunduğunda, elifbeyi belli coğrafyalara hapsetmek yerine, seslerin küresel ortaklığına esnek ve akil bir imla nizamı elzemdir.
 
 * Rumi dillerden gelen kelimeler bu standarda göre imla edilmelidir:
 
@@ -207,7 +204,7 @@ Nitekim Batı elifbelerinin temelindeki "H" harfi, tarihi ve etimolojik olarak H
 | Z | ز (bazan ص\ژ) |
 
 ---
-## 5. DİJİTAL MÜHENDİSLİK: KLAVYE TUŞ DÜZENİ
+## 4. DİJİTAL MÜHENDİSLİK: KLAVYE TUŞ DÜZENİ
 
 ![Evrensel Elifbe Klavye Düzeni](klavye.png)
 
@@ -255,7 +252,7 @@ Bu vizyon, Microsoft altyapısı (MSKLC) ile derlenmiş ve çalışan bir yazıl
 | **/** / **.** | . (Nokta) | : (İki Nokta) | 0 (Rakam) |
 
 ---
-## 6. BU NİZAMIN FAYDALARI
+## 5. BU NİZAMIN FAYDALARI
 
 1. **Data Tasarrufu:** Unicode standartlarında İslam dünyası için ayrılan yüzlerce karakterlik hantal alan, sadece birkaç on karaktere düşerek dijital depolama ve veritabanı boyutlarını küçültecektir.
 2. **AI ve NLP Hızı:** Büyük dil modelleri (LLM) ve suni zeka algoritmaları, Elifbe tabanlı metinleri işlerken çok daha hızlı tabii dil işleme (NLP) yapabilecektir.
