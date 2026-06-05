@@ -58,7 +58,7 @@ Harfler yer aldığı **0x06** Unicode tablosunda, doğrudan bağlantılı formu
 
 ### Dijital Estetik ve Mobil Desteği
 
-* Tıpkı mobil klavyelerin cümle başlarında harfleri otomatik olarak büyük harfe dönüştürmesi gibi *(Optional Capitalization)*; kullanıcı uzanan bir harf girip boşluk (Space) tuşuna veya harf olmayan bir karaktere bastığında, yazılım algoritması o harfi otomatiken yalın formuna dönüştürür. Kullanıcı sonra o karakteri silse dahi, o harf yalın formunda kalır.
+* Mobil klavyelerde, cümle başlarında harfleri otomatik olarak büyük harfe dönüştürmesi mantığıyla *(Optional Capitalization)*; kullanıcı **uzanan bir harf** girip **harf olmayan** bir karaktere bastığında, o harf otomatiken yalın formuyla değişir.
 
 * Unicode cetvelindeki Tatweel (ـ) karakteri yerine klavyedeki standart nokta (.) yahut alt çizgi (_) kullanılabilir. Alt çizgi yahut nokta, birleşmeye hazır harflerin arasında bulunduğunda, zaten keşide görüntüsüne tabii olarak kavuşacaktır.
 
