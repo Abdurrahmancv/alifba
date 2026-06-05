@@ -71,7 +71,7 @@ Bugün teklif ettiğimiz bu usul, matbaanın dünyaya ilk yayıldığı zaman ku
 
 * Ancak o devirde, dünyevi menfaatini ve sosyo-ekonomik gücünü korumak isteyen statükocu bir kesim yüzünden imkan kısıtlandı. Matbaayı getirenler ise hattatlık tekelinin etkisiyle, harflerin fıtri ve akıcı tabiatini katlederek onları sanki 4 ayrı parçaymış gibi hantal ve suni bir standarda mahkum etti. Keza çirkin ve okunaksız rika hattı, matbaanın geç gelmesinden mütevellit ortaya çıkmıştır. Bugün Unicode'un lüzumsuz yer tuttuğu bu kambur, asırlar evvel üretilen o çıkarcı refleksin dijital dünyaya sızmış bir kalıntısıdır.
 
-*İlk Türkçe Daktilonun (1913) imal edilmesiyle bu vetire hızlanabilirdi. Ancak bu daktilonun on yıl sonra (1924) topraklarımıza ulaşması ve hemen ardından yapılan yapılan siyasi tahrifat sebebiyle hayata geçirilememiş; Harflerimiz, 150 yıllık hantal bir standarda sıkışmıştır.*
+*İlk Türkçe Daktilonun (1913) imal edilmesiyle bu vetire hızlanabilirdi. Ancak bu daktilonun on yıl sonra (1924) topraklarımıza ulaşması ve hemen ardından yapılan siyasi tahrifat sebebiyle hayata geçirilememiş; Harflerimiz, 150 yıllık hantal bir standarda sıkışmıştır.*
 
 
 ---
@@ -187,7 +187,7 @@ Nitekim Batı elifbelerinin temelindeki "H" harfi, tarihi ve etimolojik olarak H
 | K | ك |
 | L | ل |
 | M | م |
-| N | ن (bazan ڭ\ڠ)
+| N | ن (bazan ڭ\ڠ) |
 | O | و (bazan ع) |
 | P | پ (bazan ف) |
 | Q | ق |
