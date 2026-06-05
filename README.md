@@ -62,8 +62,6 @@ Harfler yer aldığı **0x06** Unicode tablosunda, doğrudan bağlantılı formu
 
 * Unicode cetvelindeki Tatweel (ـ) karakteri yerine klavyedeki standart nokta (.) yahut alt çizgi (_) kullanılabilir. Alt çizgi yahut nokta, birleşmeye hazır harflerin arasında bulunduğunda, zaten keşide görüntüsüne tabii olarak kavuşacaktır.
 
-* Kendinden sonraki harfle birleşen diğer `ب`, `ت`, `ث`, `ط`, `ظ`, `ف`, `ك`, `ل` gibi harflerin hemen ucuna halihazırda klavyede var olan Arapça virgül **(،)** işareti geldiğinde, harf zaten kendi yalın görüntüsüne tabii olarak kavuşacaktır. **(Mesela: `بـ` + `،` = `ب`)**
-
 * Sırayla Lam ve Elif yazınca Lamelif olur ve bu sayede silince tek seferde silinir. İkinci hali olmayıp birleşen harften hemen sonra virgül eklediğimizde harf sondaki halini alır, ve sildiğimizde harf tek bir karaktere dönüştüğü için tek seferde silinir.
 
 ### Matbaa Devri Kabil-i Tatbik
