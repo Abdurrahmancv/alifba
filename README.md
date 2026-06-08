@@ -135,12 +135,6 @@ Bu tabii fonetik esneklik sayesinde, bilgisayarın metin okuma (TTS) motorları,
 * Waw ile اوستا(ôste), شࢫور(şûr), دوست(dôst), هࢫور(hûr).
 * Zemme ile خࢫستن(xuestin), خࢫين(xuîn), خࢫار(xuar), گࢫه(guh), دࢫهو(dohô).
 
-### Açık Ötre (ۆ)
-
-Unicode tablosundaki **"ۆ"** karakterini Açık Ötre "ö" sesi için kullanabiliriz. Böylece Türkçede hiçbir kelime aynı yazılamaz, fakat buna lüzum yok. Zira Türkçenin ilk yazıldığı Orhun Kitabelerinden bu yana buna ihtiyaç duyulmamıştır. Açık Ötre bazı misaller: عۆمر (ömür), بۆل (böl), بۆول (bol), بࢫول (bul), نࢫطق (nutuk), نۆقطه (nokta).
-
-*Açık Ötrenin asli sesi "ö" olup kalın harfli kelimelerde "o" sesini verir.*
-
 ### Jeyn (ژ) Harfinin Tasfiyesi
 
 * Türkçenin yapısında Je (ژ) ünsüzü yoktur. Türkçede bu harfi barındırmak yerine, saf dudak-diş ünsüzü olan **"ڤ"** (V) harfi sabitlenmiştir. Jeyn harfi Kürtçe gibi İrani diller için zaruri olsa da, Türkçede bu ses ج ve bazan ز\ش harfleriyle ifade edilebilir. (Mesela: شارز\شارج "şarj", جاله "jale", جندارمه "jandarma") Lakin ڤ sesi, Türkçe için elzemdir.
