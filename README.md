@@ -86,7 +86,7 @@ Bugün teklif ettiğimiz bu usul, matbaanın dünyaya ilk yayıldığı zaman ku
 * Ye `ی` harfi Türkçede "ê/î" sesi verir. Kürtçede (Yê) aynı sesi verir.
 * Vav `و` harfi Türkçede "o/u" sesi verir, ancak bazan "v" sesi için de kullanılmıştır. Kürtçede (Waw) "ô/û" sesini verir.
 
-*Türkçede ince harf bulunan kelimelerde Elif uzun "e", Vav uzun "ö/ü" gibi, kalın harf bulunan kelimelerde Ye uzun "a/ı" gibi okunur.*
+*Harflerin asli sesleri yukarıdaki gibidir ancak Türkçede; ince harf bulunan kelimelerde Elif uzun "e", Vav uzun "ö/ü" gibi, kalın harf bulunan kelimelerde Ye uzun "a/ı" gibi okunur.*
 
 Kaidenin netleşmesi için bazı emsal aşağıda ifade edilmiştir:
 
@@ -104,7 +104,7 @@ Türkçedeki ses geçişleri (okutucu uyumlarını) ek bir karaktere ihtiyaç du
 * Esre `ـِ` harekesi Türkçede "i" sesini verir. Kürtçede (Kesre) aynı sesi verir.
 * Ötre `ـُ` harekesi Türkçede "ö/ü" sesi verir, ancak tanzimat devrinde, Türkçe asıllı kelimelerde ötre yerine vav kullanılmıştır. Kürtçede (Zemme) "ue/ui" sesini verir.
 
-*Türkçede kalın harf veya uzatma harfi (Elif/Vav) bulunan kelimelerde Üstün kısa "a", Esre kısa "ı", Ötre kısa "o/u" gibi okunur.*
+*Harekelerin asli sesleri yukarıdaki gibidir ancak Türkçede; kalın harf veya uzatma harfi (Elif/Vav) bulunan kelimelerde Üstün kısa "a", Esre kısa "ı", Ötre kısa "o/u" gibi okunur.*
 
 | Hareke | Normal Okunuş | Yumuşak Okunuş | Kalınlaşma Sebebi |
 | :--- | :--- | :--- | :--- |
@@ -135,9 +135,11 @@ Bu tabii fonetik esneklik sayesinde, bilgisayarın metin okuma (TTS) motorları,
 * Waw ile اوستا(ôste), شࢫور(şûr), دوست(dôst), هࢫور(hûr).
 * Zemme ile خࢫستن(xuestin), خࢫين(xuîn), خࢫار(xuar), گࢫه(guh), دࢫهو(dohô).
 
-### Açık Ötre
+### Açık Ötre (ۆ)
 
 Unicode tablosundaki **"ۆ"** karakterini Açık Ötre "ö" sesi için kullanabiliriz. Böylece Türkçede hiçbir kelime aynı yazılamaz, fakat buna lüzum yok. Zira Türkçenin ilk yazıldığı Orhun Kitabelerinden bu yana buna ihtiyaç duyulmamıştır. Açık Ötre bazı misaller: عۆمر (ömür), بۆل (böl), بۆول (bol), بࢫول (bul), نࢫطق (nutuk), نۆقطه (nokta).
+
+*Açık Ötrenin asli sesi "ö" olup kalın harfli kelimelerde "o" sesini verir.*
 
 ### Jeyn (ژ) Harfinin Tasfiyesi
 
