@@ -26,7 +26,7 @@ Bu yönüyle Elifba, insanlığın ortak yazı mirasını uzun vadede taşımak 
 Unicode standartlarında, Elifba tabanlı diller (Türkçe, Kürtçe, Farsça, Urduca, Arapça..) ekrana basılırken hantal bir yapı kullanılır:
 
 - **0x06 Sırası (Standard Kodlar):** Harflerin sadece ham karakter değerini tutar.
-- **Presentation Forms (Sunum Biçimleri / 0xFB50 - 0xFEFF Sırası):** Harfin başta, ortada, sonda veya yalın olduğunu hesaplaması için yüzlerce gereksiz alan işgal eder.
+- **Presentation Forms (Takdim Şekilleri / 0xFB50 - 0xFEFF Sırası):** Harfin başta, ortada, sonda veya yalın olduğunu hesaplaması için yüzlerce gereksiz alan işgal eder.
 
 Bu durum veritabanlarında yer kaplar ve OpenType mimarları için hantal yazılım algoritmaları doğurur. Son yüzyılda süregelen "Arap harflerinde 4 farklı yazılış formu vardır, öğrenmesi zordur" iddiası bir yanılgıdan ibarettir.
 
@@ -54,15 +54,15 @@ Harfler yer aldığı **0x06** Unicode tablosunda, doğrudan bağlantılı formu
 **Mevcut Unicode:** 5 farklı kod / 4 farklı karakter.  
 **Olması Gereken:** Sadece 1 temel kod (بـ) ve 1 adet final varyasyon kodu. (İkinci varyasyonu yoksa tek kod)
 
-*Yazının estetik görünmesi için kullanılan diğer formlar (alt alta gelen ve birbirinin içine geçen estetik harf ligatürleri), "Presentation Forms" sırasında yer alabilir. Bu usulün tatbik edilmesiyle estetik formlar, mevcut ayrılan alandan çok daha az yer kaplar.*
+*Yazının estetik görünmesi için kullanılan diğer formlar (alt alta gelen ve birbirinin içine geçen estetik harf ligatürleri), "Presentation Forms" sırasında yer alabilir. Bu usulün tatbik edilmesiyle estetik formlar dahi, mevcut ayrılan alandan çok daha az yer kaplar.*
 
 ### Dijital Estetik ve Mobil Desteği
 
-* Mobil klavyelerde, cümle başlarında harfleri otomatik olarak büyük harfe dönüştürmesi mantığıyla *(Optional Capitalization)*; kullanıcı **uzanan bir harf** girip **harf olmayan** bir karaktere bastığında, o harf otomatiken yalın formuyla değişir.
+* Mobil klavyelerde, cümle başlarında harfleri otomatik olarak büyük harfe dönüştürmesi mantığına *(Optional Capitalization)* benzer şekilde; kullanıcı **uzanan bir harf** girip **harf olmayan** bir karaktere bastığında, uzanan harf otomatiken yalın formuyla değişir.
 
-* Unicode cetvelindeki Tatweel (ـ) karakteri yerine klavyedeki standart nokta (.) yahut alt çizgi (_) kullanılabilir. Alt çizgi yahut nokta, birleşmeye hazır harflerin arasında bulunduğunda, zaten keşide görüntüsüne tabii olarak kavuşacaktır.
+* Unicode cetvelindeki Tatweel (ـ) karakteri yerine klavyedeki standart nokta (.) yahut alt çizgi (_) kullanılabilir. Alt çizgi yahut nokta, birleşmeye hazır harflerin arasında bulunduğunda, zaten keşide manzarasına tabii olarak kavuşacaktır.
 
-* Sırayla Lam ve Elif yazınca Lamelif olur ve bu sayede silince tek seferde silinir. İkinci hali olmayıp birleşen harften hemen sonra virgül eklediğimizde harf sondaki halini alır, ve sildiğimizde harf tek bir karaktere dönüştüğü için tek seferde silinir.
+* Sırayla Lam ve Elif yazınca Lamelif karakteri olur, bu sayede bu karakter tek seferde silinir. Birleşen ama ikinci hali olmayan harften hemen sonra virgül getirdiğimizde, harf sondaki halini alır. Harf tek bir karaktere dönüştüğü için tek seferde silinebilir.
 
 ### Matbaa Devri Kabil-i Tatbik
 Bugün teklif ettiğimiz bu usul, matbaanın dünyaya ilk yayıldığı zaman kullanılabilir ve Elifba dijital çağa yıllar evvelinden girebilirdi.
@@ -71,20 +71,20 @@ Bugün teklif ettiğimiz bu usul, matbaanın dünyaya ilk yayıldığı zaman ku
 
 * Ancak o devirde, dünyevi menfaatini korumak isteyen statükocu bir kesim yüzünden, imkan kısıtlandı. Matbaayı getirenler ise hattatlık tekelinin tesiriyle, harflerin fıtri ve akıcı tabiatini katlederek onları 4 ayrı parçaymış gibi hantal ve suni bir standarda mahkum etti. Çirkin ve okunaksız rika hattı, matbaanın geç gelmesinden mütevellit ortaya çıkmıştır. Bugün Unicode'un lüzumsuz yer tuttuğu bu kambur, asırlar evvel üretilen o çıkarcı refleksin dijital dünyaya sızmış bir kalıntısıdır.
 
-*İlk Türkçe Daktilonun (1913) imal edilmesiyle bu vetire hızlanabilirdi. Ancak bu daktilonun on yıl sonra (1924) topraklarımıza ulaşması ve hemen ardından yapılan siyasi tahrifat sebebiyle hayata geçirilememiş; Harflerimiz, 150 yıllık hantal bir standarda sıkışmıştır.*
+*İlk Türkçe Daktilonun (1913) imal edilmesiyle bu vetire hızlanabilirdi. Ancak bu daktilonun on yıl sonra (1924) topraklarımıza ulaşması ve hemen ardından yapılan siyasi tahrifat sebebiyle hayata geçirilememiş; Harflerimiz, 200 yıllık hantal bir standarda sıkışmıştır.*
 
 
 ---
 ## 3. DİLLERİN SES İHTİYAÇLARINA GÖRE TASARRUF
 
-İslam coğrafyasındaki dillerin dijital imla karmaşasını çözen tasarruf hamleleri yapılmıştır.
+Bazı dillerin imla meselatını çözen tasarruf hamleleri yapılmıştır.
 
 
 ### Okutucu Unsurlar
 
 * Elif `ا` harfi Türkçede "a" sesi verir. Kürtçede (Elif) aynı sesi verir.
 * Ye `ی` harfi Türkçede "ê/î" sesi verir. Kürtçede (Yê) aynı sesi verir.
-* Vav `و` harfi Türkçede "o/u" sesi verir, ancak bazan "v" sesi için de kullanılmıştır. Kürtçede sadece (Waw) "ô/û" sesi verir.
+* Vav `و` harfi Türkçede "o/u" sesi verir, bazan "v" sesi için de kullanılır. Kürtçede (Waw) sadece "ô/û" sesi verir.
 
 *Harflerin asli sesleri yukarıdaki gibidir ancak Türkçede; ince harf bulunan kelimelerde Elif uzun "e", Vav uzun "ö/ü" gibi, kalın harf bulunan kelimelerde Ya uzun "a/ı" gibi okunabilir.*
 
@@ -121,9 +121,9 @@ Bu tabii fonetik esneklik sayesinde, bilgisayarın metin okuma (TTS) motorları,
 
 
 
-### Ötrenin Harf Formu به كࢫردي ضمه \ تࢫركجه اࢫتره
+### Zaid Vav (Ötrenin Mümessili Vav)
 
-**Okutucu Harf Çözümü:** Klasik imlada *ötre* telaffuzu, kiraat talebeleri için harf ile ifade edilerek Unicode standardındaki **"ࢫ"** karakteri sisteme dahil edilmiştir. Mesela: **بࢫل** (böl), **بول** (bul).
+Klasik Elifbada ötreyi temsil eden Vav'ı, asli Vav'dan tefrik etmek için, Zaid Vav'ın altına **قصر** ibaresi bulunur. Bu tefriki bir standard haline getirmeyi ve bunu basitleştirmeyi hedefleyerek Unicode standardındaki **"ࢫ"** karakterini tercih ettik. Türkçe asıllı olan ve asli olarak ö/ü okutan bütün kelimelerde bu usulü kullanmayı tercih ettik. Mesela: **بࢫل** (böl), **بول** (bul).
 
 **Türkçe Emsal:**
 
@@ -133,12 +133,12 @@ Bu tabii fonetik esneklik sayesinde, bilgisayarın metin okuma (TTS) motorları,
 **Misalên Kurdî:**
 
 * Waw ile اوستا(ôste), شࢫور(şûr), دوست(dôst), هࢫور(hûr).
-* Zemme ile خࢫستن(xwestin), خࢫين(xwîn), خࢫار(xwar), گࢫه(gwih), دࢫهو(dwehô).
+* Zemme ile خࢫستن(xwestin), خࢫين(xwîn), خࢫار(xwar), گࢫه(goh), دࢫهو(duhô).
 
 ### Jay (ژ) Harfinin Tasfiyesi
 
 * Türkçenin dil bünyesinde Je (ژ) sesinin müstakil bir harf olarak temsil edilmesine hacet yoktur. Jay harfine Kürdce gibi İrani dillerde hacet olsa da, Türkçede bu ses ج ve bazan ز\ش harfleriyle ifade edilebilir. (Mesela: شارز\شارج "şarj", جاله "jale", جندارمه "jandarma") Lakin ڤ sesi, Türkçe için elzemdir.
-* Jay (ژ) ve Va (ڤ) harfleri, başka bir dildeki kelimeyi referans verirken, kelimenin orijinal lafzı muhafaza edilerek ifade edilebilir. Fakat resmi Türkçe imlasında bu harfler kullanılmaz.
+* Jay (ژ) ve Va (ڤ) harfleri, başka bir dildeki kelimeyi referans verirken, kelimenin orijinal lafzı muhafaza etmek maksadıyla kullanılabilir. Fakat resmi Türkçe imlasında bu harfler kullanılmaz.
 
 ### İmale Çözümü
 
@@ -147,7 +147,7 @@ Bu tabii fonetik esneklik sayesinde, bilgisayarın metin okuma (TTS) motorları,
 
 ### Havayla Okunan He (ه) Formu
 
-**Urduca ve Kürtçe Aspirasyon (Soluklaşma) Çözümü:** Urducadaki "Du Çeşm He" (ھ) harfine ihtiyaç yoktur. Kelimelerde aspirasyonu (hava üfleyerek okumayı) göstermek için sıradan **"ه"** harfi kafidir.
+**Urduca ve Kürtçe Aspirasyon Çözümü:** Urducadaki "Du Çeşm He" (ھ) harfine ayrı bir harf olarak ihtiyaç yoktur. Kelimelerde aspirasyonu (hava üfleyerek okumayı) göstermek için sıradan **"ه"** harfi kafidir.
 
 * Kürtçede `پ` `چ` `ت` `ك` harfleri bazı kelimelerde nefes vererek okunur. Mesela **چل** kelimesi "yarasa" manasına gelirken, چـ sesi nefesle okunduğunda "kırk" manasına gelir.
 * Nefesle okunan sesi ayırt etmek için, *Du Çeşm He* ile **چهـ** şeklindeki gibi yazıldığında, normal yazılan **چل** "yarasa" ile, "kırk" manasındaki **چهل** gibi kelimeleri tefrik etmiş oluruz.
@@ -205,9 +205,9 @@ Nitekim Latin Alfabesindeki "H" harfi, tarihi ve etimolojik olarak Ha **ح** har
 
 Bu vizyon, Microsoft altyapısı (MSKLC) ile derlenmiş ve çalışan bir yazılım teknolojisidir. Standard Q klavyesindeki kas hafızası aynen korunmuştur. Klavyenin bu versiyonu mevcut Unicode sistemine ve Türkçe Q düzenine, tam uyumlu tasarlanmıştır:
 
-### Evrensel İslami Klavye Tuş Haritası:
+### İslami Klavye Microsoft Tuş Haritası:
 
-![Evrensel Elifbe Klavye Düzeni](keyboard_layout.png)
+![Cihan Şümul Elifba Klavye Düzeni](keyboard_layout.png)
 
 ---
 ## 5. BU NİZAMIN FAİDELERİ
